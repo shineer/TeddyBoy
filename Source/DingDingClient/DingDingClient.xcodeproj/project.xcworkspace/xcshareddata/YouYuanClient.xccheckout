@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>E0DFC16C-E5C6-4661-8E83-3A810AE3063B</string>
+	<key>IDESourceControlProjectName</key>
+	<string>YouYuanClient</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>bd5cc88f-ca0d-094c-983b-568474ac7312</key>
+		<string>http://192.168.68.16:8080/scm/svn/ios</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>IOS_MiLian/Source/trunk/YouYuanClient/YouYuanClient.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>bd5cc88f-ca0d-094c-983b-568474ac7312</key>
+		<string>../../../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>bd5cc88f-ca0d-094c-983b-568474ac7312</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.subversion</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>bd5cc88f-ca0d-094c-983b-568474ac7312</string>
+			<key>IDESourceControlWCCName</key>
+			<string>YouYuanSVN</string>
+		</dict>
+	</array>
+</dict>
+</plist>

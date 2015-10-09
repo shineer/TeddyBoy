@@ -1,0 +1,10 @@
+/* 
+  InfoPlist.strings
+  DingDingClient
+
+  Created by phoenix on 14-10-14.
+  Copyright (c) 2014年 SEU. All rights reserved.
+*/
+
+// A、应用名称国际化
+CFBundleDisplayName= "丁丁租房重构" ;

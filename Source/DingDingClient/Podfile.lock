@@ -1,0 +1,25 @@
+PODS:
+  - AAPullToRefresh (1.0.2)
+  - ActionSheetPicker-3.0 (1.7.2)
+  - FCIPAddressGeocoder (1.1.1)
+  - MBProgressHUD (0.9.1)
+  - RDVTabBarController (1.1.9)
+  - VVBlurPresentation (0.1.1)
+
+DEPENDENCIES:
+  - AAPullToRefresh
+  - ActionSheetPicker-3.0 (~> 1.7.2)
+  - FCIPAddressGeocoder
+  - MBProgressHUD
+  - RDVTabBarController
+  - VVBlurPresentation
+
+SPEC CHECKSUMS:
+  AAPullToRefresh: 9170fe976bad38329656fc852ee84f8095d3718e
+  ActionSheetPicker-3.0: c5bdca19fd8b3d798f0c79892cbab6f11a8523ae
+  FCIPAddressGeocoder: 79327ecb11232de017cd7b38770614f6df285bc8
+  MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad
+  RDVTabBarController: 67794f7a7a37f8e32f046f85ac67d06ab92d624a
+  VVBlurPresentation: 62c0a9d6ac22f9bed99c0c5735e7eae8156bc618
+
+COCOAPODS: 0.37.0

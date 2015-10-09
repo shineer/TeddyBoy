@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Object</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: 29d1c5bc36da364ad5aa86946d420b7bbc54a253 */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+</head>
+<body>
+<p>g# 对象定义 #</p>
+<hr />
+<p><div class="section" id="platformInfo"></p>
+<h2>1.0 平台信息对象 platformInfo</h2>
+<p>对象说明: </p>
+<pre><code>处理客户端信息、手机信息、网络信息数据封装。
+
+{
+    &quot;platformInfo&quot;:{
+            &quot;version&quot;:版本号,
+            &quot;fid&quot;:渠道号,
+            &quot;platform&quot;:平台(3-&gt;Android),
+            &quot;product&quot;:产品号(8-&gt;宝葫芦项目),
+            &quot;phonetype&quot;:手机型号,
+            &quot;pid&quot;:手机串号,
+            &quot;w&quot;:分辨率宽,
+            &quot;h&quot;:分辨率高,
+            &quot;systemVersion&quot;:系统版本,
+            &quot;netType&quot;:联网类型(0-&gt;无网络,2-&gt;wifi,3-&gt;cmwap,4-&gt;cmnet,5-&gt;ctnet,6-&gt;ctwap,7-&gt;3gwap,8-&gt;3gnet,9-&gt;uniwap,10-&gt;uninet)
+            &quot;imsi&quot;:sim卡imsi号,
+            &quot;mobileIP&quot;:手机ip
+        }
+}
+</code></pre>
+
+<p><div class="section" id="userView"></p>
+<h2>1.1 首页精选用户对象 userView</h2>
+<pre><code>{
+    &quot;userView&quot;:{
+            &quot;userId&quot;:用户id,
+            &quot;userIcon&quot;:用户头像,
+            &quot;nickName&quot;:昵称
+            &quot;age&quot;:用户年龄,
+            &quot;sex&quot;:用户性别
+            &quot;education&quot;:学历,
+            &quot;userGEO&quot;:用户坐标（double数组）,
+            &quot;recommend&quot;:用户推荐理由,
+            &quot;activeTime&quot;:用户的最后活跃时间,
+            &quot;userTagViewList&quot;:[&quot;userTagView&quot;:用户标签展示对象 ...],
+            &quot;nation&quot;:民族,
+            &quot;nationId&quot;:民族id
+            &quot;birthday&quot;:生日,  
+            &quot;figure&quot;:体型,
+            &quot;figureId&quot;:体型Id,
+            &quot;industry&quot;:行业,
+            &quot;industry&quot;:行业id,
+            &quot;income&quot;:收入,
+            &quot;incomeId&quot;:收入id
+            &quot;education&quot;:学历,
+            &quot;education&quot;:学历id
+            &quot;purpose&quot;:交友目的,
+            &quot;purposeId&quot;:交友目的id, 
+            &quot;mobileType&quot;:手机型号,
+            &quot;loginTime&quot;:登录时间,
+            &quot;nativePlace&quot;:{2.9 areaView:}籍贯,
+            &quot;area&quot;{2.9 areaView}所在的城市,
+            &quot;constellation&quot;:星座,
+            &quot;photoList&quot;:[
+                &quot;imageView&quot;:{图片展示对象}，
+                &quot;imageView&quot;:{图片展示对象}，
+                ...
+            ]
+            &quot;isScore&quot;:是否评过分  0：是 1：不是,
+            &quot;isCollect&quot;:是否收藏    0：是 1：不是
+            &quot;isSayHi&quot;:是否打过招呼 0：是 1：不是,
+            &quot;level&quot;:用户级别,
+            &quot;visitorTime&quot;:访问用户空间时间,
+            &quot;height&quot;:身高,
+            &quot;sign&quot;:个性签名,
+            &quot;iconStatus&quot;:头像状态  0：审核中，1：审核通过，-1：默认头像
+        }
+}
+</code></pre>
+
+<p><div class="section" id="recommendNotesView"></p>
+<h2>1.2 首页精选用户对象 recommendNotesView</h2>
+<pre><code>{
+    &quot;recommendNotesView&quot;:{
+            &quot;userId&quot;:用户id,
+            &quot;userIcon&quot;:用户头像,
+            &quot;age&quot;:用户年龄,
+            &quot;education&quot;:学历,
+            &quot;userGEO&quot;:用户坐标（double数组）,
+            &quot;recommend&quot;:用户推荐理由,
+            &quot;activeTime&quot;:用户的最后活跃时间,
+            &quot;notesId&quot;:动态id，
+            &quot;praiseCount&quot;:点赞数量,
+            &quot;notesType&quot;:动态类型(1：普通动态，2，参与话题，3QA问答),
+            &quot;notesPhotos&quot;:[
+                &quot;imageView&quot;:{图片展示对象}，
+                &quot;imageView&quot;:{图片展示对象}，
+                ...
+            ]，
+            &quot;publishTime&quot;:发布时间,
+            &quot;notesContent&quot;:动态内容,
+            &quot;isPraiseNotes&quot;:是否赞过动态 0赞过，1：没有赞过
+            &quot;topicID&quot;:话题id（如果notesType=2时）,
+            &quot;topicContent&quot;:话题内容（如果notesType=2时）,
+            &quot;qaId&quot;:QA问答id（如果notesType=3时）,
+            &quot;qaContent&quot;:OA问题内容（如果notesType=3时）
+
+        }
+}
+</code></pre>
+
+<p><div class="section" id="messageInboxView"></p>
+<h2>1.3 首页精选用户对象 messageInboxView</h2>
+<pre><code>{
+    &quot;messageInboxView&quot;:{
+            &quot;userId&quot;:用户id,
+            &quot;msgInboxId&quot;:信件关系id,
+            &quot;receiveId&quot;:收件人id(1：管理员信2:最近访客，3：点赞列表，4：收藏列表),
+            &quot;ureadCount&quot;:未读信数量,
+            &quot;totalCount&quot;:信件总数,
+            &quot;isRead&quot;:是否已读，0：已读1：未读,
+            &quot;msgFrom&quot;:信件来源 1：普通信件，2：最近访客，3：点赞列表，4：收藏列表,
+            &quot;receiveIcon&quot;:对方用户头像，
+            &quot;content&quot;:最后发信内容,
+            &quot;skinId&quot;:发信背景,
+            &quot;online&quot;:是否在线,
+            &quot;sendTime&quot;:发信时间
+        }
+}
+}
+</code></pre>
+
+<p><div class="section" id="messageView"></p>
+<h2>1.4 用户对象 messageView</h2>
+<pre><code>{
+    &quot;messageView&quot;:{
+            &quot;msgContentId&quot;:信件id,
+            &quot;sendId&quot;:发信人id,
+            &quot;receiveId&quot;:收件人id,
+            &quot;content&quot;:信件内容,
+            &quot;sendTime&quot;:发送时间,
+            &quot;userNotesView&quot;:{
+                [2.3 动态展示对象]
+            },
+            &quot;photoUrl&quot;:点赞图片url,
+            &quot;msgType&quot;:消息类型,1：招呼，2：私信，3,：动态赞，4:打分点赞,5:图片点赞,6:喜欢,7:系统消息,8:动态纸条
+        }
+}
+</code></pre>
+
+<p><div class="section" id="scoreView"></p>
+<h2>1.5 评分列表展示对象 scoreView</h2>
+<pre><code>{
+    &quot;scoreView&quot;:{
+            &quot;userId&quot;:用户id,
+            &quot;nickName&quot;:用户昵称,
+            &quot;cityName&quot;:城市名称,
+            &quot;score&quot;:分数,
+            &quot;scoreTime&quot;:打分时间,
+            &quot;userIcon&quot;:用户头像
+        }
+}
+</code></pre>
+
+<p><div class="section" id="bbsUserRemindView"></p>
+<h2>1.6 话题提醒展示对象 bbsUserRemindView</h2>
+<pre><code>{
+    &quot;bbsUserRemindView&quot;:{
+            &quot;remindId&quot;:提醒id,
+            &quot;receiveUserId&quot;:接受提醒用户id,
+            &quot;sendUserId&quot;:发送提醒用户id,
+            &quot;sendNickName&quot;:发送用户昵称,
+            &quot;sendIcon&quot;:发送者头像
+            &quot;remindContent&quot;:提醒内容,
+            &quot;topicId&quot;:话题id，
+            &quot;topicContent&quot;:话题内容，
+            &quot;topicFirstPhoto&quot;:话题第一张图片，
+            &quot;remindTime&quot;:发送时间，
+            &quot;isRead&quot;:是否已读0：已读，1：未读
+        }
+}
+</code></pre>
+
+<p><div class="section" id="bbsTheme"></p>
+<h2>1.7 话题主题展示对象 bbsTheme</h2>
+<pre><code>{
+    &quot;bbsTheme&quot;:{
+            &quot;themeId&quot;:话题主题id,
+            &quot;themeName&quot;:主题名称,
+            &quot;topicNum&quot;:话题数量,
+            &quot;commentNum&quot;:评论数量,
+            &quot;themePhoto&quot;:主题图片
+            &quot;themeDate&quot;:主题创建时间,
+            &quot;themeStatus&quot;:主题状态0：显示，-1：不显示，
+            &quot;order&quot;:位置顺序
+        }
+}
+</code></pre>
+
+<p><div class="section" id="bbsCommentView"></p>
+<h2>1.8 话题评论展示对象 bbsCommentView</h2>
+<pre><code>{
+    &quot;bbsCommentView&quot;:{
+            &quot;commentId&quot;:评论id,
+            &quot;topicId&quot;:话题id,
+            &quot;content&quot;:评论内容,
+            &quot;commentStatus&quot;:评论状态 0 未审核 1 通过 2不通过 9 屏蔽,
+            &quot;sendUserId&quot;:发表评论人id
+            &quot;sendUserIcon&quot;:发表评论人头像
+            &quot;toUserId&quot;:被评论人id,
+            &quot;createTime&quot;:评论时间，
+            &quot;isReplay&quot;:是否是回复评论,
+            &quot;sendNickName&quot;:&quot;发送人id&quot;,
+            &quot;toNickName&quot;:&quot;被评论人id&quot;
+        }
+}
+</code></pre>
+
+<p><div class="section" id="bbsTopicView"></p>
+<h2>1.9 话题展示对象 bbsTopicView</h2>
+<pre><code>{
+    &quot;bbsTopicView&quot;:{
+            &quot;themeId&quot;:主题ID,
+            &quot;themeName&quot;:主题名称,
+            &quot;topicId&quot;:话题id,
+            &quot;nickName&quot;:用户昵称,
+            &quot;userId&quot;:用户id,
+            &quot;age&quot;:用户年龄,
+            &quot;provinceName&quot;:省份,
+            &quot;cityName&quot;:城市名称
+            &quot;userIcon&quot;:用户头像
+            &quot;content&quot;:发帖内容,
+            &quot;crateTime&quot;:话题创建时间，
+            &quot;topicStatus&quot;:话题状态0 未审核 1通过 2不通过 8屏蔽 9删除,
+            &quot;commentTotal&quot;:话题的评论数,
+            &quot;showType&quot;:0：普通，1：精华,
+            &quot;photoList&quot;:[
+                &quot;imageView&quot;:{图片展示对象}，
+                &quot;imageView&quot;:{图片展示对象}，
+                ...
+            ],
+        }
+}
+</code></pre>
+
+<h2>1.10 用户信息对象 userInfo</h2>
+<pre><code>{
+    &quot;userInfo&quot;:{
+            &quot;userId&quot;:用户ID,
+            &quot;sex&quot;:性别,
+            &quot;fid&quot;:渠道id,
+            &quot;mobileNo&quot;:手机号,
+            &quot;tagId&quot;:表现id,
+            &quot;userIcon&quot;:头像,
+            &quot;defaultIcon&quot;:默认头像,
+            &quot;sign&quot;:个性签名,
+            &quot;signTemp&quot;:审核中的前面,
+            &quot;nickName&quot;:昵称，
+            &quot;nationId&quot;:民族,
+            &quot;height&quot;:身高,
+            &quot;weight&quot;:0：体重,
+            &quot;birthday&quot;:生日,
+            &quot;domicilePID&quot;:居住省id,
+            &quot;domicileCID&quot;:居住城市id,
+            &quot;figureID&quot;:体型id,
+            &quot;homeTownPID&quot;:家乡省份id,
+            &quot;homeTownCID&quot;:家乡城市id,
+            &quot;industryId&quot;:行业id,
+            &quot;incomeId&quot;:收入id,
+            &quot;educationId&quot;:学历id,
+            &quot;purposeId&quot;:交友目的,
+            &quot;mobileType&quot;:手机型号,
+            &quot;iconStatus&quot;:头像审核状态,
+            &quot;indexDB&quot;:“无视”,
+            &quot;msgIndexDB&quot;:“无视”,
+            &quot;updateTime&quot;:修改时间,
+            &quot;createTime&quot;:创建时间,
+            &quot;score&quot;:用户头像得分
+            &quot;userStatus&quot;:用户状态
+        }
+}
+</code></pre>
+
+<p><div class="section" id="imageView"></p>
+<h2>2.0 图片展示对象 imageView</h2>
+<pre><code>{
+    &quot;bbsTopicView&quot;:{
+            &quot;photoId&quot;:图片id,
+            &quot;smallPhotoUrl&quot;:小图url,
+            &quot;bigPhotoUrl&quot;:大图url,
+            &quot;praiseCount&quot;:图片点赞数量
+            &quot;notesId&quot;:照片所属动态id
+        }
+}
+</code></pre>
+
+<p><div class="section" id="userPraiseView"></p>
+<h2>2.1 点赞列表展示对象 userPraiseView</h2>
+<pre><code>{
+    &quot;userPraiseView&quot;:{
+            &quot;launchUserId&quot;:发起人id,
+            &quot;launchNickName&quot;:发起人昵称,
+            &quot;launchUserIcon&quot;:发起人头像,
+            &quot;praiseUserId&quot;:被点赞人id,
+            &quot;praiseNickName&quot;:被点赞人昵称,
+            &quot;praiseUserIcon&quot;:被点赞人头像,
+            &quot;praiseContent&quot;:点赞内容,
+            &quot;praiseType&quot;:赞类型1:动态点赞，2：照片点赞，3：招呼点赞,
+            &quot;praiseTime&quot;:点赞时间,
+            &quot;isRead&quot;:是否已读0：已读，1：未读
+        }
+}
+</code></pre>
+
+<p><div class="section" id="collectMsgView"></p>
+<h2>2.2 喜欢我信箱展示对象 collectMsgView</h2>
+<pre><code>{
+    &quot;collectMsgView&quot;:{
+            &quot;userId&quot;:用户id,
+            &quot;nickName&quot;:昵称,
+            &quot;userIcon&quot;:头像,
+            &quot;content&quot;:内容,
+            &quot;isRead&quot;:是否已读0已读，1未读,
+            &quot;collectTime&quot;:时间
+            &quot;isRead&quot;:是否已读0：已读，1：未读
+        }
+}
+</code></pre>
+
+<p><div class="section" id="userNotesView"></p>
+<h2>2.3 动态展示对象 userNotesView</h2>
+<pre><code>{
+    &quot;userNotesView&quot;:{
+        &quot;notesId&quot;:动态id,
+        &quot;notesContent&quot;:动态内容,
+        &quot;isPhoto&quot;:是否有头像0：有，1：没有,
+        &quot;firstPhoto&quot;：动态第一张照片,   
+        &quot;publishTime&quot;:发布时间,
+        &quot;topicId&quot;:话题id,
+        &quot;topicContent&quot;:话题内容,
+        &quot;qaId&quot;:QA的id,
+        &quot;question&quot;:问题内容,
+        &quot;notesPhotos&quot;:[
+                &quot;imageView&quot;:{图片展示对象}，
+                &quot;imageView&quot;:{图片展示对象}，
+                ...
+        ],
+        &quot;notesType&quot;:动态类型 1：普通动态，2，参与话题，3QA问答,
+        &quot;isPraiseNotes&quot;:是否赞过动态 0赞过，1：没有赞过,
+        &quot;praiseCount&quot;:点赞数量
+    }
+}
+</code></pre>
+
+<p><div class="section" id="collectMsgView"></p>
+<h2>2.4 喜欢我信箱展示对象 collectMsgView</h2>
+<pre><code>{
+    &quot;collectMsgView&quot;:{
+        &quot;userId&quot;:用户id,
+        &quot;nickName&quot;:用户昵称,
+        &quot;userIcon&quot;:用户头像,
+        &quot;content&quot;:显示文案,
+        &quot;collectTime&quot;:喜欢时间,
+        &quot;isRead&quot;:是否已读0已读，1未读
+    }
+}
+</code></pre>
+
+<p><div class="section" id="commonQAView"></p>
+<h2>2.5 对方空间共同回答QA问题展示对象 commonQAView</h2>
+<pre><code>{
+    &quot;commonQAView&quot;:{
+        &quot;questionId&quot;:问题id,
+        &quot;questionContent&quot;:问题内容,
+        &quot;lookUserAnswerId&quot;:查看用户回答问题答案id
+        &quot;answerId&quot;:登录用户答案id,
+        &quot;answerContent&quot;:登录用户回答问题答案,
+        &quot;lookUserAnswerContent&quot;:查看用户回答问题答案,
+        &quot;userIcon&quot;:登录用户头像,
+        &quot;lookUserIcon&quot;:查看用户头像
+    }
+}
+</code></pre>
+
+<p><div class="section" id="qaView"></p>
+<h2>2.6  QA问题展示对象 qaView</h2>
+<pre><code>{
+    &quot;qaView&quot;:{
+        &quot;questionId&quot;:问题id,
+        &quot;questionContent&quot;:问题内容,
+        &quot;tagId&quot;:问题所属标签,
+        &quot;answerList&quot;:[
+            answer:{
+                &quot;answerId&quot;:答案id,
+                &quot;answerContent&quot;:答案内容,
+                &quot;questionId&quot;:问题id,
+                &quot;tagId&quot;:所属标签id,
+                &quot;isCorrect&quot;:是否正确答案0：是，1：不是
+            },
+            ...
+
+        ]
+    }
+}
+</code></pre>
+
+<p><div class="section" id="userQAView"></p>
+<h2>2.7  用户QA问答列表对象 userQAView</h2>
+<pre><code>{
+    &quot;userQAView&quot;:{
+        &quot;questionId&quot;:问题id,
+        &quot;questionContent&quot;:问题内容,
+        &quot;userAnswerId&quot;:用户选在答案id,
+        &quot;answerTime&quot;:回答问题时间,
+        &quot;answerList&quot;:[
+            answer:{
+                &quot;answerId&quot;:答案id,
+                &quot;answerContent&quot;:答案内容,
+                &quot;questionId&quot;:问题id,
+                &quot;tagId&quot;:所属标签id,
+                &quot;isCorrect&quot;:是否正确答案0：是，1：不是
+            },
+            ...
+
+        ]
+    }
+}
+</code></pre>
+
+<p><div class="section" id="userTagView"></p>
+<h2>2.8  用户标签展示对象 userTagView</h2>
+<pre><code>{
+    &quot;userTagView&quot;:{
+        &quot;userTagId&quot;:用户标签主键,
+        &quot;userId&quot;:用户id,
+        &quot;tagId&quot;:标签id,
+        &quot;tagName&quot;:标签名称,
+        &quot;isShow&quot;:是否显示 0：显示，1不显示
+    }
+}
+</code></pre>
+
+<p><div class="section" id="areaView"></p>
+<h2>2.9  地区展示对象 areaView</h2>
+<pre><code>{
+    &quot;areaView&quot;:{
+        &quot;provinceId&quot;:省份id,
+        &quot;provinceName&quot;:省份名称,
+        &quot;cityId&quot;:城市id,
+        &quot;cityName&quot;:城市名称
+    }
+}
+</code></pre>
+
+<p><div class="section" id="recommendUserView"></p>
+<h2>3.0  首页推荐用户展示对象 recommendUserView</h2>
+<pre><code>{
+    &quot;recommendUserView&quot;:{
+        &quot;userId&quot;:用户id,
+        &quot;age&quot;:用户年龄,
+        &quot;recommend&quot;:推荐理由,
+        &quot;nickName&quot;:昵称,
+        &quot;userIcon&quot;:用户头像,
+        &quot;userGEO&quot;:用户坐标位置,
+        &quot;isCollect&quot;:是否收藏    0：是 1：不是
+        &quot;isSayHi&quot;:是否打过招呼 0：是 1：不是
+        &quot;education&quot;:学历,
+        &quot;activeTime&quot;:用户活跃时间,
+    }
+}
+</code></pre>
+
+<p><div class="section" id="scoreUserView"></p>
+<h2>3.1  评分用户展示对象 scoreUserView</h2>
+<pre><code>{
+    &quot;scoreUserView&quot;:{
+        &quot;userId&quot;:用户id,
+        &quot;age&quot;:用户年龄,
+        &quot;nickName&quot;:昵称,
+        &quot;userIcon&quot;:用户头像,
+        &quot;userTagViewList&quot;:[&quot;userTagView&quot;:用户标签展示对象 ...],
+        &quot;nativePlace&quot;:{2.9 areaView:}籍贯,
+        &quot;area&quot;{2.9 areaView}所在的城市
+
+    }
+}
+</code></pre>
+
+<p><div class="section" id="visitorMsgView"></p>
+<h2>3.2  最近访客信箱展示对象 visitorMsgView</h2>
+<pre><code>{
+    &quot;visitorMsgView&quot;:{
+        &quot;userId&quot;:用户id,
+        &quot;age&quot;:用户年龄,
+        &quot;nickName&quot;:昵称,
+        &quot;userIcon&quot;:用户头像,
+        &quot;area&quot;{2.9 areaView}所在的城市,
+        &quot;purpose&quot;:交友目的,
+        &quot;visitorTime&quot;:访问用户空间时间,
+        &quot;isRead&quot;:0:已读，1：未读
+
+    }
+}
+</code></pre>
+
+<p><div class="section" id="collectView"></p>
+<h2>3.3  喜欢用户的展示对象 collectView</h2>
+<pre><code>{
+    &quot;collectView&quot;:{
+        &quot;collectId&quot;:主键id,
+        &quot;age&quot;:展示用户年龄,
+        &quot;launchUserId&quot;:发起者id,
+        &quot;collectUserId&quot;:被喜欢者id,
+        &quot;collectNickName&quot;:用户昵称,
+        &quot;collectUserIcon&quot;:用户头像,
+        &quot;provinceName&quot;:省份,
+        &quot;cityName&quot;:城市，
+        &quot;isCollect&quot;:对方是否喜欢我 0：喜欢，1未喜欢
+    }
+}
+</code></pre>
+
+<p><div class="section" id="userTag"></p>
+<h2>3.4  修改标签对象 userTag</h2>
+<pre><code>{
+    &quot;userTag&quot;:{
+        &quot;userTagId&quot;:主键id,
+        &quot;userId&quot;:用户id,
+        &quot;tagId&quot;:标签id,
+        &quot;isShow&quot;:是否显示0：是，1：不是
+
+    }
+}
+</code></pre>
+
+<p><div class="section" id="userTerm"></p>
+<h2>3.5  修改标签对象 userTerm</h2>
+<pre><code>{
+    &quot;userTerm&quot;:{
+        &quot;userId&quot;:用户id,
+        &quot;minAge&quot;:最小年龄,
+        &quot;maxAge&quot;:最大年龄,
+        &quot;provinceId&quot;:省份,
+        &quot;cityId&quot;:城市,
+        &quot;educationId&quot;:学历
+    }
+}
+</code></pre>
+
+<p><div class="section" id="gift"></p>
+<h2>3.6  修改标签对象 gift</h2>
+<pre><code>{
+    &quot;gift&quot;:{
+        &quot;guid&quot;:礼物主键id,
+        &quot;giftName&quot;:礼物名称,
+        &quot;giftImg&quot;:礼物图片,
+        &quot;provinceId&quot;:省份,
+        &quot;isCharge&quot;:是否收费0：是，1 不是,
+        &quot;price&quot;:价格
+    }
+}
+</code></pre>
+
+<p><div class="section" id="userSendGiftView"></p>
+<h2>3.7  用户发礼物展示对象 userSendGiftView</h2>
+<pre><code>{
+    &quot;userSendGiftView&quot;:{
+        &quot;giftId&quot;:礼物id,
+        &quot;giftImg&quot;:礼物图片,
+        &quot;giftName&quot;:礼物名称,
+        &quot;price&quot;:礼物价格,
+        &quot;sendUserId&quot;:发礼物用户id,
+        &quot;sendUserNickName&quot;:发礼物用户昵称,
+        &quot;sendUserIcon&quot;:发礼物用户头像
+    }
+}
+</code></pre>
+
+<p><div class="section" id="userReceiveGiftView"></p>
+<h2>3.8  收礼物列表展示对象 userReceiveGiftView</h2>
+<pre><code>{
+    &quot;userReceiveGiftView&quot;:{
+        &quot;giftId&quot;:礼物id,
+        &quot;giftImg&quot;:礼物图片,
+        &quot;giftName&quot;:礼物名称,
+        &quot;price&quot;:礼物价格,
+        &quot;sendUserId&quot;:发礼物用户id,
+        &quot;sendUserNickName&quot;:发礼物用户昵称,
+        &quot;sendUserIcon&quot;:发礼物用户头像
+    }
+}
+</code></pre>
+
+<p><div class="section" id="userBlackListView"></p>
+<h2>3.9  用户给黑名单展示对象 userBlackListView</h2>
+<pre><code>{
+    &quot;userBlackListView&quot;:{
+        &quot;blackUserId&quot;:拉黑用户id,
+        &quot;blackUserName&quot;:拉黑用户昵称,
+        &quot;blackUserAge&quot;:拉黑用户年龄,
+        &quot;provinceName&quot;:拉黑用户名称,
+        &quot;cityName&quot;:拉黑用户城市
+    }
+}
+</code></pre>
+
+
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->

@@ -1,0 +1,10 @@
+platform:ios,'7.0'
+pod 'MBProgressHUD'
+pod 'AAPullToRefresh'
+pod 'RDVTabBarController'
+pod 'FCIPAddressGeocoder'
+pod 'ActionSheetPicker-3.0', '~> 1.7.2'
+pod 'VVBlurPresentation'
+pod 'SDWebImage', '~>3.7'
+pod 'Masonry'
+

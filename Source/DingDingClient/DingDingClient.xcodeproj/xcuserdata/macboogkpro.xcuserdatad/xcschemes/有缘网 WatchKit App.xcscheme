@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Scheme
+   LastUpgradeVersion = "0630"
+   version = "1.3">
+   <BuildAction
+      parallelizeBuildables = "YES"
+      buildImplicitDependencies = "YES">
+      <BuildActionEntries>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "D0420EB01B204511002E3A74"
+               BuildableName = "&#x6709;&#x7f18;&#x7f51; WatchKit App.app"
+               BlueprintName = "&#x6709;&#x7f18;&#x7f51; WatchKit App"
+               ReferencedContainer = "container:YouYuanClient.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "D0420EA51B204511002E3A74"
+               BuildableName = "&#x6709;&#x7f18;&#x7f51; WatchKit Extension.appex"
+               BlueprintName = "&#x6709;&#x7f18;&#x7f51; WatchKit Extension"
+               ReferencedContainer = "container:YouYuanClient.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "D0C9221B19EBB47B00940F7F"
+               BuildableName = "YouYuanClient.app"
+               BlueprintName = "YouYuanClient"
+               ReferencedContainer = "container:YouYuanClient.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+      </BuildActionEntries>
+   </BuildAction>
+   <TestAction
+      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
+      selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+      shouldUseLaunchSchemeArgsEnv = "YES"
+      buildConfiguration = "Debug">
+      <Testables>
+      </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "D0420EB01B204511002E3A74"
+            BuildableName = "&#x6709;&#x7f18;&#x7f51; WatchKit App.app"
+            BlueprintName = "&#x6709;&#x7f18;&#x7f51; WatchKit App"
+            ReferencedContainer = "container:YouYuanClient.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
+   </TestAction>
+   <LaunchAction
+      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
+      selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+      launchStyle = "0"
+      useCustomWorkingDirectory = "NO"
+      buildConfiguration = "Debug"
+      ignoresPersistentStateOnLaunch = "NO"
+      debugDocumentVersioning = "YES"
+      allowLocationSimulation = "YES">
+      <RemoteRunnable
+         runnableDebuggingMode = "2"
+         BundleIdentifier = "com.apple.springboard"
+         RemotePath = "/&#x6709;&#x7f18;&#x7f51;">
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "D0420EB01B204511002E3A74"
+            BuildableName = "&#x6709;&#x7f18;&#x7f51; WatchKit App.app"
+            BlueprintName = "&#x6709;&#x7f18;&#x7f51; WatchKit App"
+            ReferencedContainer = "container:YouYuanClient.xcodeproj">
+         </BuildableReference>
+      </RemoteRunnable>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "D0420EB01B204511002E3A74"
+            BuildableName = "&#x6709;&#x7f18;&#x7f51; WatchKit App.app"
+            BlueprintName = "&#x6709;&#x7f18;&#x7f51; WatchKit App"
+            ReferencedContainer = "container:YouYuanClient.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
+      <AdditionalOptions>
+      </AdditionalOptions>
+   </LaunchAction>
+   <ProfileAction
+      shouldUseLaunchSchemeArgsEnv = "YES"
+      savedToolIdentifier = ""
+      useCustomWorkingDirectory = "NO"
+      buildConfiguration = "Release"
+      debugDocumentVersioning = "YES">
+      <RemoteRunnable
+         runnableDebuggingMode = "2"
+         BundleIdentifier = "com.apple.springboard"
+         RemotePath = "/&#x6709;&#x7f18;&#x7f51;">
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "D0420EB01B204511002E3A74"
+            BuildableName = "&#x6709;&#x7f18;&#x7f51; WatchKit App.app"
+            BlueprintName = "&#x6709;&#x7f18;&#x7f51; WatchKit App"
+            ReferencedContainer = "container:YouYuanClient.xcodeproj">
+         </BuildableReference>
+      </RemoteRunnable>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "D0420EB01B204511002E3A74"
+            BuildableName = "&#x6709;&#x7f18;&#x7f51; WatchKit App.app"
+            BlueprintName = "&#x6709;&#x7f18;&#x7f51; WatchKit App"
+            ReferencedContainer = "container:YouYuanClient.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
+   </ProfileAction>
+   <AnalyzeAction
+      buildConfiguration = "Debug">
+   </AnalyzeAction>
+   <ArchiveAction
+      buildConfiguration = "Release"
+      revealArchiveInOrganizer = "YES">
+   </ArchiveAction>
+</Scheme>

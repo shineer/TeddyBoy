@@ -1,0 +1,2416 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>API</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: 29d1c5bc36da364ad5aa86946d420b7bbc54a253 */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+</head>
+<body>
+<p><div class="section" id="validate"></p>
+<h2>1.0.0.1 获取验证码 /user/validate</h2>
+<p>HTTP请求方式:</p>
+<pre><code>POST
+</code></pre>
+
+<p>引用对象:</p>
+<p><a href="./Object.html#platformInfo">1.0 平台信息对象 platformInfo</a></p>
+<p>传入参数:</p>
+<pre><code>    {
+        &quot;mobileNo&quot;:手机号
+    }
+</code></pre>
+
+<p>返回:</p>
+<pre><code>    {
+        &quot;token&quot;:用户token，之后所有的请求接口都要传入token,
+        &quot;userId&quot;:用户id
+    }
+</code></pre>
+
+<p><div class="section" id="register"></p>
+<h2>1.0.0.2 注册 /user/register</h2>
+<p>HTTP请求方式:</p>
+<pre><code>POST
+</code></pre>
+
+<p>引用对象:</p>
+<p><a href="./Object.html#platformInfo">1.0 平台信息对象 platformInfo</a></p>
+<p>传入参数:</p>
+<pre><code>    {
+        &quot;mobileNo&quot;:用户名（手机号）,
+        &quot;password&quot;:密码（MD5加密后）,
+        &quot;validate&quot;:短信验证码,
+        &quot;thirdPartyId&quot;:第三方登录id,
+        &quot;platformInfo&quot;:{平台信息对象}
+    }
+</code></pre>
+
+<p>返回:</p>
+<pre><code>    {
+        &quot;status&quot;:等于1时表示成功,
+        &quot;msg&quot;:提示信息,
+    }
+</code></pre>
+
+<p><div class="section" id="establishInfo"></p>
+<h2>1.0.0.3 创建资料 /user/establishInfo</h2>
+<p>HTTP请求方式:</p>
+<pre><code>注意采用multipart/form-data编码方式；
+</code></pre>
+
+<p>引用对象:</p>
+<p><a href="./Object.html#platformInfo">1.0 平台信息对象 platformInfo</a></p>
+<p>传入参数:</p>
+<pre><code>    {
+        &quot;nickName&quot;:用户昵称,
+        &quot;sex&quot;:性别,
+        &quot;fid&quot;:渠道号,
+        &quot;phoneType&quot;:手机型号,
+        &quot;width&quot;:头像宽度,
+        &quot;height&quot;:头像高度,
+        &quot;file&quot;:图片源,#  #
+    }
+</code></pre>
+
+<p>返回:</p>
+<pre><code>    {
+        &quot;status&quot;:等于1时表示成功,
+        &quot;nickName&quot;:用户昵称
+    }
+</code></pre>
+
+<p><div class="section" id="perfectInfo"></p>
+<h2>1.0.0.4 完善资料 /user/perfectInfo</h2>
+<p>HTTP请求方式:</p>
+<pre><code>POST
+</code></pre>
+
+<p>引用对象:</p>
+<p><a href="./Object.html#platformInfo">1.0 平台信息对象 platformInfo</a></p>
+<p>传入参数:</p>
+<pre><code>    {
+        &quot;provinceId&quot;:省份id,
+        &quot;cityId&quot;:城市id,
+        &quot;birthday&quot;:生日（例如：1980-01-01）,
+        &quot;eductionId&quot;：学历id,
+        &quot;purposeId&quot;:交友目的,
+        &quot;sex&quot;:用户性别,
+        &quot;longitude&quot;:经度，
+        &quot;latitude&quot;:维度，
+        &quot;platformInfo&quot;:{平台信息对象}
+
+    }
+</code></pre>
+
+<p>返回:</p>
+<pre><code>    {
+        &quot;status&quot;:等于1时表示成功
+    }
+</code></pre>
+
+<p><div class="section" id="login"></p>
+<h2>1.0.0.5 登录 /user/login</h2>
+<p>HTTP请求方式:</p>
+<pre><code>POST
+</code></pre>
+
+<p>引用对象:</p>
+<p><a href="./Object.html#platformInfo">1.0 平台信息对象 platformInfo</a></p>
+<p>传入参数:</p>
+<pre><code>    {
+        &quot;mobileNo&quot;:用户名（手机号）,
+        &quot;password&quot;:密码（MD5加密后）,
+        &quot;longitude&quot;:经度,
+        &quot;latitude&quot;:维度,
+        &quot;platformInfo&quot;:{平台信息对象}
+    }
+</code></pre>
+
+<p>返回:</p>
+<pre><code>    {
+        &quot;userId&quot;:用户id,
+        &quot;useStatus&quot;:用户状态
+        &quot;token&quot;:用户token，之后所有的请求接口都要传入token,
+        &quot;useStatus&quot;:用户状态（-2：封设备，-1：封账号 0：注册中，1：注册完成）,
+        &quot;regStep&quot;:用户注册步骤（&quot;validate(以获取获取验证码)&quot;,&quot;register(注完成)&quot;,&quot;addUserInfo（完成设置资料第一步）&quot;,&quot;perfectInfo（完成设置资料第二步）&quot;）
+        &quot;userInfo&quot;:{用户信息对象}
+    }
+</code></pre>
+
+<p><div class="section" id="uploadIcon"></p>
+<h2>1.0.0.6 上传头像 /user/uploadIcon</h2>
+<p>HTTP请求方式:</p>
+<pre><code>POST
+</code></pre>
+
+<p><strong>注意</strong></p>
+<pre><code>注意采用multipart/form-data编码方式；
+</code></pre>
+
+<p>引用对象:</p>
+<p><a href="./Object.html#platformInfo">1.0 平台信息对象 platformInfo</a></p>
+<p>传入参数:</p>
+<pre><code>    {
+        &quot;file&quot;:图片源,
+        &quot;platformInfo&quot;:{平台信息对象}
+    }
+</code></pre>
+
+<p>返回:</p>
+<pre><code>    {
+        &quot;icon_url&quot;:用户头像url
+    }
+</code></pre>
+
+<p><div class="section" id="login"></p>
+<h2>1.0.0.7 用户简单信息 /user/simpleInfo</h2>
+<p>HTTP请求方式:</p>
+<pre><code>POST
+</code></pre>
+
+<p>引用对象:</p>
+<p><a href="./Object.html#platformInfo">1.0 平台信息对象 platformInfo</a></p>
+<p>传入参数:</p>
+<pre><code>    {
+        &quot;userId&quot;:用户id
+    }
+</code></pre>
+
+<p>返回:</p>
+<pre><code>    {
+        &quot;picUrl&quot;:用户头像url,
+        &quot;nickname&quot;:用户昵称
+    }
+</code></pre>
+
+<p><div class="section" id="bgLogin"></p>
+<h2>1.0.0.8 二次登录 /user/bgLogin</h2>
+<p>HTTP请求方式:</p>
+<pre><code>POST
+</code></pre>
+
+<p>引用对象:</p>
+<p><a href="./Object.html#platformInfo">1.0 平台信息对象 platformInfo</a></p>
+<p>传入参数:</p>
+<pre><code>    {
+        &quot;longitude&quot;:经度,
+        &quot;latitude&quot;:维度,
+        &quot;platformInfo&quot;:{平台信息对象}
+    }
+</code></pre>
+
+<p>返回:</p>
+<pre><code>    {
+        &quot;userId&quot;:用户id,
+        &quot;useStatus&quot;:用户状态
+        &quot;token&quot;:用户token，之后所有的请求接口都要传入token,
+        &quot;useStatus&quot;:用户状态（-2：封设备，-1：封账号 0：注册中，1：注册完成）,
+        &quot;regStep&quot;:用户注册步骤（&quot;validate(以获取获取验证码)&quot;,&quot;register(注完成)&quot;,&quot;addUserInfo（完成设置资料第一步）&quot;,&quot;perfectInfo（完成设置资料第二步）&quot;）
+        &quot;userInfo&quot;:{用户信息对象}
+    }
+</code></pre>
+
+<p><div class="section" id="idverify"></p>
+<h2>1.0.0.9 身份证验证 /user/idverify</h2>
+<p>HTTP请求方式:</p>
+<pre><code>POST
+</code></pre>
+
+<p>引用对象:</p>
+<p><a href="./Object.html#platformInfo">1.0 平台信息对象 platformInfo</a></p>
+<p>传入参数:</p>
+<pre><code>    {
+        &quot;idNum&quot;:身份证号,
+        &quot;name&quot;:姓名,
+        &quot;platformInfo&quot;:{平台信息对象}
+    }
+</code></pre>
+
+<p>返回:</p>
+<pre><code>    {
+        &quot;status&quot;:状态 1为成功
+    }
+</code></pre>
+
+<p><div class="section" id="registerV2"></p>
+<h2>1.0.0.10 注册V2 /user/registerV2</h2>
+<p>HTTP请求方式:</p>
+<pre><code>POST
+</code></pre>
+
+<p>引用对象:</p>
+<p><a href="./Object.html#platformInfo">1.0 平台信息对象 platformInfo</a></p>
+<p>传入参数:</p>
+<pre><code>    {
+        &quot;nickName&quot;:昵称,
+        &quot;provinceId&quot;:省份,
+        &quot;cityId&quot;:城市,
+        &quot;thirdPartyId&quot;:第三方登录,
+        &quot;password&quot;:密码,
+        &quot;sex&quot;:性别,
+        &quot;birthday&quot;:生日，
+        &quot;platformInfo&quot;:{平台信息对象}
+    }
+</code></pre>
+
+<p>返回:</p>
+<pre><code>    {
+        &quot;userId&quot;:用户ID，
+        &quot;regStep&quot;:注册步骤，
+        &quot;token&quot;:生成的token
+    }
+</code></pre>
+
+<p><div class="section" id="step0"></p>
+<h2>1.0.0.11 注册前数据提供 /user/step0</h2>
+<p>HTTP请求方式:</p>
+<pre><code>POST
+</code></pre>
+
+<p>引用对象:</p>
+<p><a href="./Object.html#platformInfo">1.0 平台信息对象 platformInfo</a></p>
+<p>传入参数:</p>
+<pre><code>    {
+        &quot;platformInfo&quot;:{平台信息对象}
+    }
+</code></pre>
+
+<p>返回:</p>
+<pre><code>    {
+        &quot;provinceId&quot;:省份ID,
+        &quot;cityId&quot;:城市ID,
+        &quot;password&quot;:生成的随机密码,
+        &quot;nickName&quot;:随机昵称
+    }
+</code></pre>
+
+<p><div class="section" id="bandPhone"></p>
+<h2>1.0.0.12 绑定手机号 /user/bandPhone</h2>
+<p>HTTP请求方式:</p>
+<pre><code>POST
+</code></pre>
+
+<p>引用对象:</p>
+<p><a href="./Object.html#platformInfo">1.0 平台信息对象 platformInfo</a></p>
+<p>传入参数:</p>
+<pre><code>    {
+        &quot;platformInfo&quot;:{平台信息对象}
+        &quot;isBand&quot;:默认0 获取验证码 1直接绑定 2先解绑当前手机再绑定到当前用户,
+        &quot;mobileNo&quot;:手机号,
+        &quot;validate&quot;:验证码(在绑定时传递 默认空)
+    }
+</code></pre>
+
+<p>返回:</p>
+<pre><code>    {
+        status:
+            -1 验证失败
+            -2 此手机号已绑定
+            0 操作失败
+            1 成功
+    }
+</code></pre>
+
+<p><div class="section" id="updateUserTerm"></p>
+<h2>2.0.0.1 修改征友条件 /recommend/updateUserTerm</h2>
+<p>HTTP请求方式:</p>
+<pre><code>POST
+</code></pre>
+
+<p>引用对象:</p>
+<p><a href="./Object.html#platformInfo">1.0 平台信息对象 platformInfo</a></p>
+<p>传入参数:</p>
+<pre><code>    {
+        &quot;minAge&quot;:最小年龄,
+        &quot;maxAge&quot;:最大年龄,
+        &quot;provinceId&quot;:省份id,
+        &quot;cityId&quot;:城市id,
+        &quot;educationId&quot;:学历id，
+        &quot;platformInfo&quot;:{平台信息对象}
+    }
+</code></pre>
+
+<p>返回:</p>
+<pre><code>    {
+        &quot;status&quot;:等于1时表示成功
+    }
+</code></pre>
+
+<p><div class="section" id="sendNotes"></p>
+<h2>2.0.0.2 发送纯文本动态 /recommend/sendNotes</h2>
+<p>HTTP请求方式:</p>
+<pre><code>POST
+</code></pre>
+
+<p>引用对象:</p>
+<p><a href="./Object.html#platformInfo">1.0 平台信息对象 platformInfo</a></p>
+<p>传入参数:</p>
+<pre><code>    {
+        &quot;notesContent&quot;:动态内容,
+        &quot;platformInfo&quot;:{平台信息对象}
+    }
+</code></pre>
+
+<p>返回:</p>
+<pre><code>    {
+        &quot;notesId&quot;:生成的动态id
+    }
+</code></pre>
+
+<p><div class="section" id="sendPhotoNotes"></p>
+<h2>2.0.0.3 发送带图片动态 /recommend/sendPhotoNotes</h2>
+<p>HTTP请求方式:</p>
+<pre><code>POST
+</code></pre>
+
+<p><strong>注意</strong></p>
+<pre><code>注意采用multipart/form-data编码方式；
+</code></pre>
+
+<p>引用对象:</p>
+<p><a href="./Object.html#platformInfo">1.0 平台信息对象 platformInfo</a></p>
+<p>传入参数:</p>
+<pre><code>    {
+        &quot;notesContent&quot;:动态内容,
+        &quot;file1&quot;:图片源1(可传多张照片)
+        ...
+        &quot;platformInfo&quot;:{平台信息对象}
+    }
+</code></pre>
+
+<p>返回:</p>
+<pre><code>    {
+        &quot;notesId&quot;:生成的动态id
+    }
+</code></pre>
+
+<p><div class="section" id="recommend"></p>
+<h2>2.0.0.4 推荐首页接口/recommend/recommend</h2>
+<p>HTTP请求方式:</p>
+<pre><code>POST
+</code></pre>
+
+<p>引用对象:</p>
+<p><a href="./Object.html#platformInfo">1.0 平台信息对象 platformInfo</a></p>
+<p><a href="./Object.html#recommendUserView">3.0 首页推荐用户展示对象 recommendUserView</a></p>
+<p><a href="./Object.html#recommendNotesView">1.2 首页精选用户对象 recommendNotesView</a></p>
+<p>传入参数:</p>
+<pre><code>    {
+        &quot;width&quot;:动态照片宽度,
+        &quot;height&quot;:动态照片高度,
+        &quot;platformInfo&quot;:{平台信息对象}
+    }
+</code></pre>
+
+<p>返回:</p>
+<pre><code>    {
+        &quot;userList&quot;:[12个用户
+            &quot;recommendUserView&quot;:{首页推荐用户展示对象},
+            &quot;recommendUserView&quot;:{首页推荐用户展示对象}
+            ...
+        ]
+        &quot;notesList&quot;:[100个用户
+            &quot;recommendNotesView&quot;:{动态对象},
+            &quot;recommendNotesView&quot;:{动态对象}
+            ...
+        ]
+    }
+</code></pre>
+
+<p><div class="section" id="getUserTerm"></p>
+<h2>2.0.0.5 获取用户征友条件 /recommend/getUserTerm]</h2>
+<p>HTTP请求方式:</p>
+<pre><code>POST
+</code></pre>
+
+<p>引用对象:</p>
+<p><a href="./Object.html#platformInfo">1.0 平台信息对象 platformInfo</a></p>
+<p><a href="./Object.html#userTerm">3.5  修改标签对象 userTerm</a>	</p>
+<p>传入参数:</p>
+<pre><code>    {
+        &quot;platformInfo&quot;:{平台信息对象}
+    }
+</code></pre>
+
+<p>返回:</p>
+<pre><code>    {
+        &quot;userTerm&quot;:征友条件
+    }
+</code></pre>
+
+<p><div class="section" id="sendMsg"></p>
+<h2>3.0.0.1 发送普通私信 /msg/sendMsg</h2>
+<p>HTTP请求方式:</p>
+<pre><code>POST
+</code></pre>
+
+<p>引用对象:</p>
+<p><a href="./Object.html#platformInfo">1.0 平台信息对象 platformInfo</a></p>
+<p>传入参数:</p>
+<pre><code>    {
+        &quot;receiveId&quot;:收信人id,
+        &quot;message&quot;:发信内容,
+        &quot;platformInfo&quot;:{平台信息对象}
+    }
+</code></pre>
+
+<p>返回:</p>
+<pre><code>    {
+        &quot;msgId&quot;:私信id
+    }
+</code></pre>
+
+<p><div class="section" id="sayHi"></p>
+<h2>3.0.0.2 发送普通招呼 /msg/sayHi</h2>
+<p>HTTP请求方式:</p>
+<pre><code>POST
+</code></pre>
+
+<p>引用对象:</p>
+<p><a href="./Object.html#platformInfo">1.0 平台信息对象 platformInfo</a></p>
+<p>传入参数:</p>
+<pre><code>    {
+        &quot;receiveId&quot;:收信人id,
+        &quot;platformInfo&quot;:{平台信息对象}
+    }
+</code></pre>
+
+<p>返回:</p>
+<pre><code>    {
+        &quot;msgId&quot;:私信id
+    }
+</code></pre>
+
+<p><div class="section" id="isCanSayHi"></p>
+<h2>3.0.0.3 能否打招呼接口/msg/isCanSayHi</h2>
+<p>HTTP请求方式:</p>
+<pre><code>POST
+</code></pre>
+
+<p>引用对象:</p>
+<p><a href="./Object.html#platformInfo">1.0 平台信息对象 platformInfo</a></p>
+<p>传入参数:</p>
+<pre><code>    {
+        &quot;receiveId&quot;:收信人id,
+        &quot;platformInfo&quot;:{平台信息对象}
+    }
+</code></pre>
+
+<p>返回:</p>
+<pre><code>    {
+        &quot;isCanSayHi&quot;:true能打招呼，false不能打招呼
+    }
+</code></pre>
+
+<p><div class="section" id="getMsgInbox"></p>
+<h2>3.0.0.4 获取信件列表 /msg/getMsgInbox</h2>
+<p>HTTP请求方式:</p>
+<pre><code>POST
+</code></pre>
+
+<p>引用对象:</p>
+<p><a href="./Object.html#platformInfo">1.0 平台信息对象 platformInfo</a></p>
+<p><a href="./Object.html#messageInboxView">1.3 信箱列表对象 messageInboxView</a></p>
+<p>传入参数:</p>
+<pre><code>    {
+        &quot;page&quot;:页码数,
+        &quot;size&quot;:获取信件数量,
+        &quot;wide&quot;:用户头像宽度,
+        &quot;high&quot;:用户头像高度，
+        &quot;platformInfo&quot;:{平台信息对象}
+    }
+</code></pre>
+
+<p>返回:</p>
+<pre><code>    {
+        &quot;pageSize&quot;:返回信件数量,
+        &quot;pageNum&quot;:当前页码数,
+        &quot;listMsgBox&quot;:[
+            &quot;messageInboxView&quot;:{信箱列表对象}
+            &quot;messageInboxView&quot;:{信箱列表对象}
+            ...
+        ]
+    }
+</code></pre>
+
+<p><div class="section" id="getMsg"></p>
+<h2>3.0.0.5 获取信件详细 /msg/getMsg</h2>
+<p>HTTP请求方式:</p>
+<pre><code>POST
+</code></pre>
+
+<p>引用对象:</p>
+<p><a href="./Object.html#platformInfo">1.0 平台信息对象 platformInfo</a></p>
+<p><a href="./Object.html#messageView">1.4 信箱列表对象 messageView</a></p>
+<p>传入参数:</p>
+<pre><code>    {
+        &quot;receiveId&quot;:对方用户id,
+        &quot;isAll&quot;:是否取全部信件 0:取全部信，1：取未读信,
+        &quot;msgInboxId&quot;:信箱关系列表
+        &quot;platformInfo&quot;:{平台信息对象}
+    }
+</code></pre>
+
+<p>返回:</p>
+<pre><code>    {
+        &quot;unreadCount&quot;:返回对方未读信数量,
+        &quot;msgList&quot;:[
+            &quot;messageView&quot;:{信件对象}
+            &quot;messageView&quot;:{信件对象}
+            ...
+        ]
+    }
+</code></pre>
+
+<p><div class="section" id="deleteMsgInbox"></p>
+<h2>3.0.0.6 删除信件关系 /msg/deleteMsgInbox</h2>
+<p>HTTP请求方式:</p>
+<pre><code>POST
+</code></pre>
+
+<p>引用对象:</p>
+<p><a href="./Object.html#platformInfo">1.0 平台信息对象 platformInfo</a></p>
+<p>传入参数:</p>
+<pre><code>    {
+        &quot;msgInboxId&quot;:信件关系id,
+        &quot;platformInfo&quot;:{平台信息对象}
+    }
+</code></pre>
+
+<p>返回:</p>
+<pre><code>    {
+        &quot;status&quot;:1是删除成功,
+    }
+</code></pre>
+
+<p><div class="section" id="deleteMsg"></p>
+<h2>3.0.0.7 删除单条信件 /msg/deleteMsg</h2>
+<p>HTTP请求方式:</p>
+<pre><code>POST
+</code></pre>
+
+<p>引用对象:</p>
+<p><a href="./Object.html#platformInfo">1.0 平台信息对象 platformInfo</a></p>
+<p>传入参数:</p>
+<pre><code>    {
+        &quot;msgId&quot;:信件id,
+        &quot;platformInfo&quot;:{平台信息对象}
+    }
+</code></pre>
+
+<p>返回:</p>
+<pre><code>    {
+        &quot;status&quot;:1是删除成功,
+    }
+</code></pre>
+
+<p><div class="section" id="deleteAllMsg"></p>
+<h2>3.0.0.8 删除所有信 /msg/deleteAllMsg</h2>
+<p>HTTP请求方式:</p>
+<pre><code>POST
+</code></pre>
+
+<p>引用对象:</p>
+<p><a href="./Object.html#platformInfo">1.0 平台信息对象 platformInfo</a></p>
+<p>传入参数:</p>
+<pre><code>    {
+        &quot;receiveId&quot;:收信人id,
+        &quot;platformInfo&quot;:{平台信息对象}
+    }
+</code></pre>
+
+<p>返回:</p>
+<pre><code>    {
+        &quot;status&quot;:1是删除成功,
+    }
+</code></pre>
+
+<p><div class="section" id="getPraiseList"></p>
+<h2>3.0.0.9 获取为我点赞列表 /msg/getPraiseList</h2>
+<p>HTTP请求方式:</p>
+<pre><code>POST
+</code></pre>
+
+<p>引用对象:</p>
+<p><a href="./Object.html#platformInfo">1.0 平台信息对象 platformInfo</a></p>
+<p><a href="./Object.html#userPraiseView">2.1 点赞列表展示对象 userPraiseView</a></p>
+<p>传入参数:</p>
+<pre><code>    {
+        &quot;isRead&quot;:true:只取未读，false：取全部,
+        &quot;platformInfo&quot;:{平台信息对象}
+    }
+</code></pre>
+
+<p>返回:</p>
+<pre><code>    {
+        &quot;praiseViewList&quot;:[
+            userPraiseView:{点赞列表展示对象},
+            userPraiseView:{点赞列表展示对象},
+            ...
+
+        ]
+    }
+</code></pre>
+
+<p><div class="section" id="getVisitorList"></p>
+<h2>3.0.0.10 获取最近访客列表 /msg/getVisitorList</h2>
+<p>HTTP请求方式:</p>
+<pre><code>POST
+</code></pre>
+
+<p>引用对象:</p>
+<p><a href="./Object.html#platformInfo">1.0 平台信息对象 platformInfo</a></p>
+<p><a href="./Object.html#visitorMsgView">3.2 最近访客信箱展示对象 visitorMsgView</a></p>
+<p>传入参数:</p>
+<pre><code>    {
+        &quot;height&quot;:照片高度,
+        &quot;width&quot;:照片宽度,
+        &quot;page&quot;:页码
+        &quot;size&quot;:获取个数,
+        &quot;platformInfo&quot;:{平台信息对象}
+    }
+</code></pre>
+
+<p>返回:</p>
+<pre><code>    {
+        &quot;visitorViewList&quot;:[
+            visitorMsgView:{最近访客信箱展示对象},
+            visitorMsgView:{最近访客信箱展示对象},
+            ...
+
+        ]
+    }
+</code></pre>
+
+<p><div class="section" id="getCollectList"></p>
+<h2>3.0.0.11 获取喜欢我的列表 /msg/getCollectList</h2>
+<p>HTTP请求方式:</p>
+<pre><code>POST
+</code></pre>
+
+<p>引用对象:</p>
+<p><a href="./Object.html#platformInfo">1.0 平台信息对象 platformInfo</a></p>
+<p><a href="./Object.html#collectMsgView">2.1 点赞列表展示对象 collectMsgView</a></p>
+<p>传入参数:</p>
+<pre><code>    {
+        &quot;isRead&quot;:true:只取未读，false：取全部,
+        &quot;platformInfo&quot;:{平台信息对象}
+    }
+</code></pre>
+
+<p>返回:</p>
+<pre><code>    {
+        &quot;collectMsgViewList&quot;:[
+            collectMsgView:{喜欢我信箱展示对象},
+            collectMsgView:{喜欢我信箱展示对象},
+            ...
+
+        ]
+    }
+</code></pre>
+
+<p><div class="section" id="getSystemMsg"></p>
+<h2>3.0.0.12 获取系统消息 /msg/getSystemMsg</h2>
+<p>HTTP请求方式:</p>
+<pre><code>POST
+</code></pre>
+
+<p>引用对象:</p>
+<p><a href="./Object.html#platformInfo">1.0 平台信息对象 platformInfo</a></p>
+<p><a href="./Object.html#messageView">1.4 信箱列表对象 messageView</a></p>
+<p>传入参数:</p>
+<pre><code>    {
+        &quot;receiveId&quot;:对方用户id,
+        &quot;isAll&quot;:是否取全部信件 0:取全部信，1：取未读信,
+        &quot;msgInboxId&quot;:信箱关系列表
+        &quot;platformInfo&quot;:{平台信息对象}
+    }
+</code></pre>
+
+<p>返回:</p>
+<pre><code>    {
+        &quot;unreadCount&quot;:返回对方未读信数量,
+        &quot;msgList&quot;:[
+            &quot;messageView&quot;:{信件对象}
+            &quot;messageView&quot;:{信件对象}
+            ...
+        ]
+    }
+</code></pre>
+
+<p><div class="section" id="getCollectNum"></p>
+<h2>3.0.0.13 获取喜欢我的、我喜欢的个数 /msg/getCollectNum</h2>
+<p>HTTP请求方式:</p>
+<pre><code>POST
+</code></pre>
+
+<p>引用对象:</p>
+<p><a href="./Object.html#platformInfo">1.0 平台信息对象 platformInfo</a></p>
+<p>传入参数:</p>
+<pre><code>    {
+        &quot;myFav&quot;:0:我喜欢的，1：喜欢我的
+    }
+</code></pre>
+
+<p>返回:</p>
+<pre><code>    {
+        &quot;total&quot;:总数
+    }
+</code></pre>
+
+<p><div class="section" id="getScoreUserList"></p>
+<h2>4.0.0.1 获取评分用户接口 /score/getScoreUserList</h2>
+<p>HTTP请求方式:</p>
+<pre><code>POST
+</code></pre>
+
+<p>引用对象:</p>
+<p><a href="./Object.html#platformInfo">1.0 平台信息对象 platformInfo</a></p>
+<p><a href="./Object.html#scoreUserView">3.1 评分用户展示对象 scoreUserView</a></p>
+<p>传入参数:</p>
+<pre><code>    {
+        &quot;height&quot;:照片高度,
+        &quot;width&quot;:照片宽度
+        &quot;size&quot;:获取个数
+        &quot;platformInfo&quot;:{平台信息对象}
+    }
+</code></pre>
+
+<p>返回:</p>
+<pre><code>    {
+        &quot;userList&quot;:[
+                    &quot;scoreUserView&quot;:{评分用户展示对象}，
+                    &quot;scoreUserView&quot;:{评分用户展示对象}，
+                    ...
+                 ]
+    }
+</code></pre>
+
+<p><div class="section" id="score"></p>
+<h2>4.0.0.2 打分接口 /score/score</h2>
+<p>HTTP请求方式:</p>
+<pre><code>POST
+</code></pre>
+
+<p>引用对象:</p>
+<p><a href="./Object.html#platformInfo">1.0 平台信息对象 platformInfo</a></p>
+<p>传入参数:</p>
+<pre><code>    {
+        &quot;scoreUserId&quot;:被打分用户id,
+        &quot;score&quot;:分数
+        &quot;platformInfo&quot;:{平台信息对象}
+    }
+</code></pre>
+
+<p>返回:</p>
+<pre><code>    {
+        &quot;status&quot;:0:失败，1：成功
+    }
+</code></pre>
+
+<p><div class="section" id="getScore"></p>
+<h2>4.0.0.3 获取我的打分记录接口 /score/getScore</h2>
+<p>HTTP请求方式:</p>
+<pre><code>POST
+</code></pre>
+
+<p>引用对象:</p>
+<p><a href="./Object.html#platformInfo">1.0 平台信息对象 platformInfo</a></p>
+<p><a href="./Object.html#scoreView">1.5 评分列表展示对象 scoreView</a></p>
+<p>传入参数:</p>
+<pre><code>    {
+        &quot;page&quot;:页码数,
+        &quot;size&quot;:个数,
+        &quot;width&quot;:照片宽度,
+        &quot;height&quot;:照片高度
+        &quot;platformInfo&quot;:{平台信息对象}
+    }
+</code></pre>
+
+<p>返回:</p>
+<pre><code>    {
+        &quot;scoreViewList&quot;:[
+            &quot;scoreView&quot;:{评分列表展示对象}
+        ]
+    }
+</code></pre>
+
+<p><div class="section" id="getByScore"></p>
+<h2>4.0.0.4 给我打分列表 /score/getByScore</h2>
+<p>HTTP请求方式:</p>
+<pre><code>POST
+</code></pre>
+
+<p>引用对象:</p>
+<p><a href="./Object.html#platformInfo">1.0 平台信息对象 platformInfo</a></p>
+<p><a href="./Object.html#scoreView">1.5 评分列表展示对象 scoreView</a></p>
+<p>传入参数:</p>
+<pre><code>    {
+        &quot;page&quot;:页码数,
+        &quot;size&quot;:个数,
+        &quot;width&quot;:照片宽度,
+        &quot;height&quot;:照片高度
+        &quot;platformInfo&quot;:{平台信息对象}
+    }
+</code></pre>
+
+<p>返回:</p>
+<pre><code>    {
+        &quot;scoreViewList&quot;:[
+            &quot;scoreView&quot;:{评分列表展示对象}
+        ]
+    }
+</code></pre>
+
+<p><div class="section" id="sendTopic"></p>
+<h2>5.0.0.1 发布话题接口 /bbs/sendTopic</h2>
+<p>HTTP请求方式:</p>
+<pre><code>POST
+</code></pre>
+
+<p>引用对象:</p>
+<p><a href="./Object.html#platformInfo">1.0 平台信息对象 platformInfo</a></p>
+<p>传入参数:</p>
+<pre><code>    {
+        &quot;themeId&quot;:主题id,
+        &quot;content&quot;:话题内容,
+        &quot;platformInfo&quot;:{平台信息对象}
+    }
+</code></pre>
+
+<p>返回:</p>
+<pre><code>    {
+        &quot;status&quot;:1发送成功
+    }
+</code></pre>
+
+<p><div class="section" id="sendPhotoTopic"></p>
+<h2>5.0.0.2 发布带图片话题 /bbs/sendPhotoTopic</h2>
+<p>HTTP请求方式:</p>
+<pre><code>POST
+</code></pre>
+
+<p><strong>注意</strong></p>
+<pre><code>注意采用multipart/form-data编码方式；
+</code></pre>
+
+<p>引用对象:</p>
+<p><a href="./Object.html#platformInfo">1.0 平台信息对象 platformInfo</a></p>
+<p>传入参数:</p>
+<pre><code>    {
+        &quot;themeId&quot;:主题id,
+        &quot;content&quot;:话题内容,
+        &quot;file1&quot;:图片源1(可传多张照片)
+        ...,
+        &quot;platformInfo&quot;:{平台信息对象}
+    }
+</code></pre>
+
+<p>返回:</p>
+<pre><code>    {
+        &quot;status&quot;:1发送成功
+    }
+</code></pre>
+
+<p><div class="section" id="sendComment"></p>
+<h2>5.0.0.3 发布评论 /bbs/sendComment</h2>
+<p>HTTP请求方式:</p>
+<pre><code>POST
+</code></pre>
+
+<p>引用对象:</p>
+<p><a href="./Object.html#platformInfo">1.0 平台信息对象 platformInfo</a></p>
+<p>传入参数:</p>
+<pre><code>    {
+        &quot;receiveUserId&quot;:被评论人id(如果是回复评论，该条评论人id),
+        &quot;commentContent&quot;:评论内容,
+        &quot;topicId&quot;:话题id,
+        &quot;isReplay&quot;:是否是回复评论 0:是 1:不是,
+        &quot;themeId&quot;:主题id,
+        &quot;topicContent&quot;:帖子内容
+        &quot;platformInfo&quot;:{平台信息对象}
+    }
+</code></pre>
+
+<p>返回:</p>
+<pre><code>    {
+        &quot;status&quot;:1发送成功
+    }
+</code></pre>
+
+<p><div class="section" id="getBbsUserRemind"></p>
+<h2>5.0.0.4 获取话题提醒接口 /bbs/getBbsUserRemind</h2>
+<p>HTTP请求方式:</p>
+<pre><code>POST
+</code></pre>
+
+<p>引用对象:</p>
+<p><a href="./Object.html#platformInfo">1.0 平台信息对象 platformInfo</a></p>
+<p><a href="./Object.html#bbsUserRemindView">1.6 平台信息对象 bbsUserRemindView</a></p>
+<p>传入参数:</p>
+<pre><code>    {
+        &quot;isRead&quot;:0:已读，1：未读，-1全部,
+        &quot;width&quot;:图片宽度,
+        &quot;height&quot;:图片高度,
+        &quot;platformInfo&quot;:{平台信息对象}
+    }
+</code></pre>
+
+<p>返回:</p>
+<pre><code>    {
+        &quot;remindViewList&quot;:[
+            &quot;bbsUserRemindView&quot;:{话题提醒展示对象},
+            &quot;bbsUserRemindView&quot;:{话题提醒展示对象},
+            ... 
+        ]
+    }
+</code></pre>
+
+<p><div class="section" id="getBbsTopicList"></p>
+<h2>5.0.0.5 获取话题列表接口 /bbs/getBbsTopicList</h2>
+<p>HTTP请求方式:</p>
+<pre><code>POST
+</code></pre>
+
+<p>引用对象:</p>
+<p><a href="./Object.html#platformInfo">1.0 平台信息对象 platformInfo</a></p>
+<p><a href="./Object.html#bbsTopicBoxView">1.9 话题展示对象 bbsTopicView</a></p>
+<p>传入参数:</p>
+<pre><code>    {
+        &quot;themeId&quot;:主题id(如果是话题首页推荐为recommend),
+        &quot;page&quot;:页码数,
+        &quot;size&quot;:获取数量,
+        &quot;width&quot;:图片宽度,
+        &quot;height&quot;:图片高度,
+        &quot;platformInfo&quot;:{平台信息对象}
+    }
+</code></pre>
+
+<p>返回:
+	话题列表和置顶话题列表，客户端去重
+		{
+			&quot;bbsTopicViewList&quot;:[
+				&quot;bbsTopicView&quot;:{话题展示对象},
+				&quot;bbsTopicView&quot;:{话题展示对象},
+				...	
+			],
+			&quot;bbsTopTopicViewList&quot;:[
+				&quot;bbsTopicView&quot;:{话题展示对象},
+				&quot;bbsTopicView&quot;:{话题展示对象},
+				...	
+			]
+		}
+<div class="section" id="getBbsTopic"></p>
+<h2>5.0.0.6 获取话题详细接口 /bbs/getBbsTopic</h2>
+<p>HTTP请求方式:</p>
+<pre><code>POST
+</code></pre>
+
+<p>引用对象:</p>
+<p><a href="./Object.html#platformInfo">1.0 平台信息对象 platformInfo</a></p>
+<p><a href="./Object.html#bbsTopicView">1.9 话题展示对象 bbsTopicView</a></p>
+<p>传入参数:</p>
+<pre><code>    {
+        &quot;topicId&quot;:主题id(如果是话题首页推荐为recommend),
+        &quot;width&quot;:图片宽度,
+        &quot;height&quot;:图片高度,
+        &quot;platformInfo&quot;:{平台信息对象}
+    }
+</code></pre>
+
+<p>返回:</p>
+<pre><code>    {
+        &quot;bbsTopicView&quot;:{话题展示对象}
+    }
+</code></pre>
+
+<p><div class="section" id="getBbsTheme"></p>
+<h2>5.0.0.7 获取话题主题列表 /bbs/getBbsTheme</h2>
+<p>HTTP请求方式:</p>
+<pre><code>POST
+</code></pre>
+
+<p>引用对象:</p>
+<p><a href="./Object.html#platformInfo">1.0 平台信息对象 platformInfo</a></p>
+<p><a href="./Object.html#bbsTheme">1.7 平台信息对象 bbsTheme</a></p>
+<p>传入参数:</p>
+<pre><code>    {
+        &quot;platformInfo&quot;:{平台信息对象}
+    }
+</code></pre>
+
+<p>返回:</p>
+<pre><code>    {
+        &quot;themeList&quot;:[
+            &quot;bbsTheme&quot;:{话题主题展示对象},
+            &quot;bbsTheme&quot;:{话题主题展示对象},
+            ...
+        ]
+    }
+</code></pre>
+
+<p><div class="section" id="getBbsCommentList"></p>
+<h2>5.0.0.8 获取话题评论列表 /bbs/getBbsCommentList</h2>
+<p>HTTP请求方式:</p>
+<pre><code>POST
+</code></pre>
+
+<p>引用对象:</p>
+<p><a href="./Object.html#platformInfo">1.0 平台信息对象 platformInfo</a></p>
+<p><a href="./Object.html#bbsCommentView">1.7 话题评论展示对象 bbsCommentView</a></p>
+<p>传入参数:</p>
+<pre><code>    {
+        &quot;topicId&quot;:话题id,
+        &quot;page&quot;:页码数,
+        &quot;size&quot;:获取个数,
+        &quot;platformInfo&quot;:{平台信息对象}
+    }
+</code></pre>
+
+<p>返回:</p>
+<pre><code>    {
+        &quot;bbsCommentViewList&quot;:[
+            &quot;bbsCommentView&quot;:{话题评论展示对象},
+            &quot;bbsCommentView&quot;:{话题评论展示对象},
+            ...
+        ]
+    }
+</code></pre>
+
+<p><div class="section" id="delUserRemind"></p>
+<h2>5.0.0.9 删除一条话题提醒记录 /bbs/delUserRemind</h2>
+<p>HTTP请求方式:</p>
+<pre><code>POST
+</code></pre>
+
+<p>引用对象:</p>
+<p><a href="./Object.html#platformInfo">1.0 平台信息对象 platformInfo</a></p>
+<p>传入参数:</p>
+<pre><code>    {
+        &quot;remindId&quot;:提醒id,
+        &quot;platformInfo&quot;:{平台信息对象}
+    }
+</code></pre>
+
+<p>返回:</p>
+<pre><code>    {
+        &quot;status&quot;:1 成功，-1失败
+    }
+</code></pre>
+
+<p><div class="section" id="delTopicComment"></p>
+<h2>5.0.0.10 删除话题评论 /bbs/delTopicComment</h2>
+<p>HTTP请求方式:</p>
+<pre><code>POST
+</code></pre>
+
+<p>引用对象:</p>
+<p><a href="./Object.html#platformInfo">1.0 平台信息对象 platformInfo</a></p>
+<p>传入参数:</p>
+<pre><code>    {
+        &quot;commentId&quot;:评论id,
+        &quot;platformInfo&quot;:{平台信息对象}
+    }
+</code></pre>
+
+<p>返回:</p>
+<pre><code>    {
+        &quot;status&quot;:1 成功，-1失败
+    }
+</code></pre>
+
+<p><div class="section" id="delTopic"></p>
+<h2>5.0.0.11 删除话题 /bbs/delTopic</h2>
+<p>HTTP请求方式:</p>
+<pre><code>POST
+</code></pre>
+
+<p>引用对象:</p>
+<p><a href="./Object.html#platformInfo">1.0 平台信息对象 platformInfo</a></p>
+<p>传入参数:</p>
+<pre><code>    {
+        &quot;topicId&quot;:话题id,
+        &quot;platformInfo&quot;:{平台信息对象}
+    }
+</code></pre>
+
+<p>返回:</p>
+<pre><code>    {
+        &quot;status&quot;:1 成功，-1失败
+    }
+</code></pre>
+
+<p><div class="section" id="delAllUserRemind"></p>
+<h2>5.0.0.12 删除所有话题提醒 /bbs/delAllUserRemind</h2>
+<p>HTTP请求方式:</p>
+<pre><code>POST
+</code></pre>
+
+<p>引用对象:</p>
+<p><a href="./Object.html#platformInfo">1.0 平台信息对象 platformInfo</a></p>
+<p>传入参数:</p>
+<pre><code>    {
+        &quot;platformInfo&quot;:{平台信息对象}
+    }
+</code></pre>
+
+<p>返回:</p>
+<pre><code>    {
+        &quot;status&quot;:1 成功，-1失败
+    }
+</code></pre>
+
+<p><div class="section" id="getMeTopicList"></p>
+<h2>5.0.0.13 我的话题列表 /bbs/getMeTopicList</h2>
+<p>HTTP请求方式:</p>
+<pre><code>POST
+</code></pre>
+
+<p>引用对象:</p>
+<p><a href="./Object.html#platformInfo">1.0 平台信息对象 platformInfo</a></p>
+<p><a href="./Object.html#bbsTopicView">1.9 话题展示对象 bbsTopicView</a></p>
+<p>传入参数:</p>
+<pre><code>    {
+        &quot;width&quot;:图片宽度,
+        &quot;height&quot;:图片高度,
+        &quot;platformInfo&quot;:{平台信息对象}
+    }
+</code></pre>
+
+<p>返回:</p>
+<pre><code>    {
+        &quot;bbsTopicViewList&quot;:[
+            bbsTopicView:{话题展示对象},
+            bbsTopicView:{话题展示对象},
+            ...
+        ]
+    }
+</code></pre>
+
+<p><div class="section" id="collect"></p>
+<h2>6.0.0.1 喜欢接口 /space/collect</h2>
+<p>HTTP请求方式:</p>
+<pre><code>POST
+</code></pre>
+
+<p>引用对象:</p>
+<p><a href="./Object.html#platformInfo">1.0 平台信息对象 platformInfo</a></p>
+<p>传入参数:</p>
+<pre><code>    {
+        &quot;collectUserId&quot;:喜欢用户id,
+        &quot;platformInfo&quot;:{平台信息对象}
+    }
+</code></pre>
+
+<p>返回:</p>
+<pre><code>    {
+        &quot;status&quot;:1 成功，-1失败
+    }
+</code></pre>
+
+<p><div class="section" id="cancelCollect"></p>
+<h2>6.0.0.2 取消喜欢接口 /space/cancelCollect</h2>
+<p>HTTP请求方式:</p>
+<pre><code>POST
+</code></pre>
+
+<p>引用对象:</p>
+<p><a href="./Object.html#platformInfo">1.0 平台信息对象 platformInfo</a></p>
+<p>传入参数:</p>
+<pre><code>    {
+        &quot;collectId&quot;:喜欢id主键,
+        &quot;collectUserId&quot;:喜欢人的用户id,
+        &quot;platformInfo&quot;:{平台信息对象}
+    }
+</code></pre>
+
+<p>返回:</p>
+<pre><code>    {
+        &quot;status&quot;:1 成功，-1失败
+    }
+</code></pre>
+
+<p><div class="section" id="getCollectMe"></p>
+<h2>6.0.0.3  我的空间收藏我的列表 /space/getCollectMe</h2>
+<p>HTTP请求方式:</p>
+<pre><code>POST
+</code></pre>
+
+<p>引用对象:</p>
+<p><a href="./Object.html#platformInfo">1.0 平台信息对象 platformInfo</a></p>
+<p><a href="./Object.html#collectView">3.3  喜欢用户的展示对象 collectView</a></p>
+<p>传入参数:</p>
+<pre><code>    {
+        &quot;page&quot;:页码,
+        &quot;size&quot;:数量,
+        &quot;platformInfo&quot;:{平台信息对象}
+    }
+</code></pre>
+
+<p>返回:</p>
+<pre><code>    {
+        &quot;userViewList&quot;:[
+            &quot;collectView&quot;:喜欢用户的展示对象,
+            &quot;collectView&quot;:喜欢用户的展示对象,
+            &quot;collectView&quot;:喜欢用户的展示对象,
+            ...
+        ]
+    }
+</code></pre>
+
+<p><div class="section" id="getMeCollect"></p>
+<h2>6.0.0.4  我的空间我收藏列表接口 /space/getMeCollect</h2>
+<p>HTTP请求方式:</p>
+<pre><code>POST
+</code></pre>
+
+<p>引用对象:</p>
+<p><a href="./Object.html#platformInfo">1.0 平台信息对象 platformInfo</a></p>
+<p><a href="./Object.html#collectView">3.3  喜欢用户的展示对象 collectView</a></p>
+<p>传入参数:</p>
+<pre><code>    {
+        &quot;page&quot;:页码,
+        &quot;size&quot;:数量,
+        &quot;platformInfo&quot;:{平台信息对象}
+    }
+</code></pre>
+
+<p>返回:</p>
+<pre><code>    {
+        &quot;userViewList&quot;:[
+            &quot;collectView&quot;:喜欢用户的展示对象,
+            &quot;collectView&quot;:喜欢用户的展示对象,
+            &quot;collectView&quot;:喜欢用户的展示对象,
+            ...
+        ]
+    }
+</code></pre>
+
+<p><div class="section" id="getMeNotesList"></p>
+<h2>6.0.0.5  获取用户动态列表 /space/getMeNotesList</h2>
+<p>HTTP请求方式:</p>
+<pre><code>POST
+</code></pre>
+
+<p>引用对象:</p>
+<p><a href="./Object.html#platformInfo">1.0 平台信息对象 platformInfo</a>
+ <a href="./Object.html#userNotesView">2.3 动态展示对象 userNotesView</a></p>
+<p>传入参数:</p>
+<pre><code>    {
+        &quot;page&quot;:页码,
+        &quot;size&quot;:数量,
+        &quot;width&quot;:动态图片宽度,
+        &quot;height&quot;:动态图片高度,
+        &quot;platformInfo&quot;:{平台信息对象}
+    }
+</code></pre>
+
+<p>返回:</p>
+<pre><code>    {
+        &quot;userNotesViewList&quot;:[
+            &quot;userNotesView&quot;:动态展示对象,
+            &quot;userNotesView&quot;:动态展示对象,
+            &quot;userNotesView&quot;:动态展示对象,
+            ...
+        ]
+    }
+</code></pre>
+
+<p><div class="section" id="getUserNotesList"></p>
+<h2>6.0.0.6  获取用户动态列表 /space/getUserNotesList</h2>
+<p>HTTP请求方式:</p>
+<pre><code>POST
+</code></pre>
+
+<p>引用对象:</p>
+<p><a href="./Object.html#platformInfo">1.0 平台信息对象 platformInfo</a>
+ <a href="./Object.html#userNotesView">2.3 动态展示对象 userNotesView</a></p>
+<p>传入参数:</p>
+<pre><code>    {
+        &quot;page&quot;:页码,
+        &quot;size&quot;:数量,
+        &quot;width&quot;:动态图片宽度,
+        &quot;size&quot;:动态图片高度,
+        &quot;lookUserId&quot;:查看用户id
+        &quot;platformInfo&quot;:{平台信息对象}
+    }
+</code></pre>
+
+<p>返回:</p>
+<pre><code>    {
+        &quot;userNotesViewList&quot;:[
+            &quot;userNotesView&quot;:动态展示对象,
+            &quot;userNotesView&quot;:动态展示对象,
+            &quot;userNotesView&quot;:动态展示对象,
+            ...
+        ]
+    }
+</code></pre>
+
+<p><div class="section" id="getMeUserInfo"></p>
+<h2>6.0.0.7 获取我的用户资料 /space/getMeUserInfo</h2>
+<p>HTTP请求方式:</p>
+<pre><code>POST
+</code></pre>
+
+<p>引用对象:</p>
+<p><a href="./Object.html#platformInfo">1.0 平台信息对象 platformInfo</a>
+ <a href="./Object.html#userView">1.1 用户对象 userView</a></p>
+<p>传入参数:</p>
+<pre><code>    {
+        &quot;smallWidth&quot;:小图宽度,
+        &quot;smallHeight&quot;:小图高度,
+        &quot;bigWidth&quot;:大图宽度,
+        &quot;bigHeight&quot;:大图高度,
+        &quot;platformInfo&quot;:{平台信息对象}
+    }
+</code></pre>
+
+<p>返回:</p>
+<pre><code>    {
+        &quot;userView&quot;:用户对象,
+        &quot;notesCount&quot;:动态数量,
+        &quot;userQACount&quot;:用户回答QA问答数量
+    }
+</code></pre>
+
+<p><div class="section" id="getUserInfo"></p>
+<h2>6.0.0.8 获取对方用户资料 /space/getUserInfo</h2>
+<p>HTTP请求方式:</p>
+<pre><code>POST
+</code></pre>
+
+<p>引用对象:</p>
+<p><a href="./Object.html#platformInfo">1.0 平台信息对象 platformInfo</a>
+ <a href="./Object.html#userView">1.1 用户对象 userView</a></p>
+<p>传入参数:</p>
+<pre><code>    {
+        &quot;smallWidth&quot;:小图宽度,
+        &quot;smallHeight&quot;:小图高度,
+        &quot;bigWidth&quot;:大图宽度,
+        &quot;bigHeight&quot;:大图高度,
+        &quot;lookUserId&quot;:查看用户id
+        &quot;platformInfo&quot;:{平台信息对象}
+    }
+</code></pre>
+
+<p>返回:</p>
+<pre><code>    {
+        &quot;userView&quot;:用户对象,
+        &quot;notesCount&quot;:动态数量
+        &quot;userQACount&quot;:用户回答QA问答数量
+        &quot;userStatus&quot;:用户状态
+    }
+</code></pre>
+
+<p><div class="section" id="getUserTagList"></p>
+<h2>6.0.0.9 获取用户标签列表 /space/getUserTagList</h2>
+<p>HTTP请求方式:</p>
+<pre><code>POST
+</code></pre>
+
+<p>引用对象:</p>
+<p><a href="./Object.html#platformInfo">1.0 平台信息对象 platformInfo</a></p>
+<p><a href="./Object.html#userTagView">2.8 用户标签展示对象 userTagView</a></p>
+<p>传入参数:</p>
+<pre><code>    {
+        &quot;platformInfo&quot;:{平台信息对象}
+    }
+</code></pre>
+
+<p>返回:</p>
+<pre><code>    {
+        &quot;userTagViewList&quot;:[
+            &quot;userTagView&quot;:用户标签展示对象,
+            &quot;userTagView&quot;:用户标签展示对象,
+            ...
+
+        ]
+    }
+</code></pre>
+
+<p><div class="section" id="notesPraise"></p>
+<h2>6.0.0.10 动态点赞 /space/notesPraise</h2>
+<p>HTTP请求方式:</p>
+<pre><code>POST
+</code></pre>
+
+<p>引用对象:</p>
+<p><a href="./Object.html#platformInfo">1.0 平台信息对象 platformInfo</a></p>
+<p>传入参数:</p>
+<pre><code>    {
+        &quot;byPraiseUserId&quot;:被赞用户id,
+        &quot;notesId&quot;:动态id,
+        &quot;platformInfo&quot;:{平台信息对象}
+    }
+</code></pre>
+
+<p>返回:</p>
+<pre><code>    {
+        &quot;status&quot;:1 成功，-1失败
+    }
+</code></pre>
+
+<p><div class="section" id="photoPraise"></p>
+<h2>6.0.0.11 图片点赞接口 /space/photoPraise</h2>
+<p>HTTP请求方式:</p>
+<pre><code>POST
+</code></pre>
+
+<p>引用对象:</p>
+<p><a href="./Object.html#platformInfo">1.0 平台信息对象 platformInfo</a></p>
+<p>传入参数:</p>
+<pre><code>    {
+        &quot;byPraiseUserId&quot;:被赞用户id,
+        &quot;notesId&quot;:动态id,
+        &quot;photoId&quot;:图片id,
+        &quot;isIcon&quot;:是否头像点赞 0：是，1：不是,
+        &quot;platformInfo&quot;:{平台信息对象}
+    }
+</code></pre>
+
+<p>返回:</p>
+<pre><code>    {
+        &quot;status&quot;:1 成功，-1失败
+    }
+</code></pre>
+
+<p><div class="section" id="updateUserInfo"></p>
+<h2>6.0.0.12 修改用户资料 /space/updateUserInfo</h2>
+<p>HTTP请求方式:</p>
+<pre><code>POST
+</code></pre>
+
+<p>引用对象:</p>
+<p><a href="./Object.html#platformInfo">1.0 平台信息对象 platformInfo</a></p>
+<p>传入参数:</p>
+<pre><code>    {
+        &quot;nickName&quot;:被赞用户id,
+        &quot;provinceId&quot;:所在省份,
+        &quot;cityId&quot;:所在城市,
+        &quot;birthday&quot;:生日,
+        &quot;eductionId&quot;:学历id,
+        &quot;purposeId&quot;:交友目的,
+        &quot;homeTownPID&quot;:故乡省份id,
+        &quot;homeTownCID&quot;:故乡城市id,
+        &quot;industryId&quot;:行业Id,
+        &quot;incomeId&quot;:收入Id,
+        &quot;figureId&quot;:体型id,
+        &quot;height&quot;:身高,
+        &quot;platformInfo&quot;:{平台信息对象}
+    }
+</code></pre>
+
+<p>返回:</p>
+<pre><code>    {
+        &quot;status&quot;:1 成功，-1失败,
+    }
+</code></pre>
+
+<p><div class="section" id="updateUserTag"></p>
+<h2>6.0.0.13 修改用户表是是否显示接口 /space/updateUserTag</h2>
+<p>HTTP请求方式:</p>
+<pre><code>POST
+</code></pre>
+
+<p>引用对象:</p>
+<p><a href="./Object.html#platformInfo">1.0 平台信息对象 platformInfo</a></p>
+<p><a href="./Object.html#userTag">3.4  修改标签对象 userTag</a></p>
+<p>传入参数:</p>
+<pre><code>    {
+        &quot;userTagList&quot;:[
+            userTag:{修改标签对象},
+            userTag:{修改标签对象},
+            userTag:{修改标签对象},
+            ...
+        ],
+        &quot;platformInfo&quot;:{平台信息对象}
+    }
+</code></pre>
+
+<p>返回:</p>
+<pre><code>    {
+        &quot;status&quot;:1 成功，-1失败,
+    }
+</code></pre>
+
+<p><div class="section" id="delPhoto"></p>
+<h2>6.0.0.14 删除照片 /space/delPhoto</h2>
+<p>HTTP请求方式:</p>
+<pre><code>POST
+</code></pre>
+
+<p>引用对象:</p>
+<p><a href="./Object.html#platformInfo">1.0 平台信息对象 platformInfo</a></p>
+<p>传入参数:</p>
+<pre><code>    {
+        &quot;photoId&quot;:图片id,
+        &quot;platformInfo&quot;:{平台信息对象}
+    }
+</code></pre>
+
+<p>返回:</p>
+<pre><code>    {
+        &quot;status&quot;:1 成功，-1失败,
+    }
+</code></pre>
+
+<p><div class="section" id="delPhoto"></p>
+<h2>6.0.0.15 修改用户签名 /space/updateUserSign</h2>
+<p>HTTP请求方式:</p>
+<pre><code>POST
+</code></pre>
+
+<p>引用对象:</p>
+<p><a href="./Object.html#platformInfo">1.0 平台信息对象 platformInfo</a></p>
+<p>传入参数:</p>
+<pre><code>    {
+        &quot;sign&quot;:个性签名,
+        &quot;platformInfo&quot;:{平台信息对象}
+    }
+</code></pre>
+
+<p>返回:</p>
+<pre><code>    {
+        &quot;status&quot;:1 成功，-1失败,
+    }
+</code></pre>
+
+<p><div class="section" id="delUserNotes"></p>
+<h2>6.0.0.16 删除用户动态 /space/delUserNotes</h2>
+<p>HTTP请求方式:</p>
+<pre><code>POST
+</code></pre>
+
+<p>引用对象:</p>
+<p><a href="./Object.html#platformInfo">1.0 平台信息对象 platformInfo</a></p>
+<p>传入参数:</p>
+<pre><code>    {
+        &quot;notesId&quot;:动态id,
+        &quot;platformInfo&quot;:{平台信息对象}
+    }
+</code></pre>
+
+<p>返回:</p>
+<pre><code>    {
+        &quot;status&quot;:1 成功，-1失败,
+    }
+</code></pre>
+
+<p><div class="section" id="isPhotoPraise"></p>
+<h2>6.0.0.17 动态照片是否点过赞 /space/isPhotoPraise</h2>
+<p>HTTP请求方式:</p>
+<pre><code>POST
+</code></pre>
+
+<p>引用对象:</p>
+<p><a href="./Object.html#platformInfo">1.0 平台信息对象 platformInfo</a></p>
+<p>传入参数:</p>
+<pre><code>    {
+        &quot;photoId&quot;:照片id,
+        &quot;platformInfo&quot;:{平台信息对象}
+    }
+</code></pre>
+
+<p>返回:</p>
+<pre><code>    {
+        &quot;isPraise&quot;:0 可以点赞，1 不能点赞,
+    }
+</code></pre>
+
+<p><div class="section" id="getRandomQuestion"></p>
+<h2>7.0.0.1 获取一道随记问题 /qa/getRandomQuestion</h2>
+<p>HTTP请求方式:</p>
+<pre><code>POST
+</code></pre>
+
+<p>引用对象:</p>
+<p><a href="./Object.html#platformInfo">1.0 平台信息对象 platformInfo</a></p>
+<p><a href="./Object.html#qaView">2.6  QA问题展示对象 qaView</a></p>
+<p>传入参数:</p>
+<pre><code>    {
+        &quot;lastQuestionId&quot;:上一道问题id（默认为0）,
+        &quot;platformInfo&quot;:{平台信息对象}
+    }
+</code></pre>
+
+<p>返回:</p>
+<pre><code>    {
+        &quot;qaView&quot;:QA问题展示对象,
+    }
+</code></pre>
+
+<p><div class="section" id="getMeQAList"></p>
+<h2>7.0.0.2 获取我回答的QA问题列表 /qa/getMeQAList</h2>
+<p>HTTP请求方式:</p>
+<pre><code>POST
+</code></pre>
+
+<p>引用对象:</p>
+<p><a href="./Object.html#platformInfo">1.0 平台信息对象 platformInfo</a></p>
+<p><a href="./Object.html#userQAView">2.7 用户QA问答列表对象 userQAView</a></p>
+<p>传入参数:</p>
+<pre><code>    {
+        &quot;page&quot;:页码,
+        &quot;size&quot;:获取数量
+        &quot;platformInfo&quot;:{平台信息对象}
+    }
+</code></pre>
+
+<p>返回:</p>
+<pre><code>    {
+
+        &quot;userQAViewList&quot;:[
+            &quot;userQAView&quot;:用户QA问答列表对象,
+            &quot;userQAView&quot;:用户QA问答列表对象,    
+            &quot;userQAView&quot;:用户QA问答列表对象,
+            ...
+        ]
+    }
+</code></pre>
+
+<p><div class="section" id="answer"></p>
+<h2>7.0.0.3 获取我回答的QA问题列表 /qa/answer</h2>
+<p>HTTP请求方式:</p>
+<pre><code>POST
+</code></pre>
+
+<p>引用对象:</p>
+<p><a href="./Object.html#platformInfo">1.0 平台信息对象 platformInfo</a></p>
+<p>传入参数:</p>
+<pre><code>    {
+        &quot;questionId&quot;:问题id,
+        &quot;answerId&quot;:选择答案id,
+        &quot;tagId&quot;:所属标签,
+        &quot;isCorrect&quot;:是否是正确答案 0：是1：不是,
+        &quot;platformInfo&quot;:{平台信息对象}
+    }
+</code></pre>
+
+<p>返回:</p>
+<pre><code>    {
+        &quot;status&quot;:1 成功，-1失败,
+    }
+</code></pre>
+
+<p><div class="section" id="getUserQuestion"></p>
+<h2>7.0.0.4 获取对方用户回答过并且我没有回答过的QA问答 /qa/getUserQuestion</h2>
+<p>HTTP请求方式:</p>
+<pre><code>POST
+</code></pre>
+
+<p>引用对象:</p>
+<p><a href="./Object.html#platformInfo">1.0 平台信息对象 platformInfo</a></p>
+<p><a href="./Object.html#qaView">2.6  QA问题展示对象 qaView</a></p>
+<p>传入参数:</p>
+<pre><code>    {
+        &quot;lookUserId&quot;:查看用户id,
+        &quot;platformInfo&quot;:{平台信息对象}
+    }
+</code></pre>
+
+<p>返回:</p>
+<pre><code>    {
+        &quot;qaView&quot;:QA问题展示对象
+    }
+</code></pre>
+
+<p><div class="section" id="getCommonQA"></p>
+<h2>7.0.0.5 获取共同回答过的QA问答 /qa/getCommonQA</h2>
+<p>HTTP请求方式:</p>
+<pre><code>POST
+</code></pre>
+
+<p>引用对象:</p>
+<p><a href="./Object.html#platformInfo">1.0 平台信息对象 platformInfo</a></p>
+<p><a href="./Object.html#commonQAView">2.5 对方空间共同回答QA问题展示对象 commonQAView</a></p>
+<p>传入参数:</p>
+<pre><code>    {
+        &quot;lookUserId&quot;:查看用户id,
+        &quot;questionId&quot;:问题id,
+        &quot;width&quot;:头像宽度,
+        &quot;height&quot;:头像高度,
+        &quot;platformInfo&quot;:{平台信息对象}
+    }
+</code></pre>
+
+<p>返回:</p>
+<pre><code>    {
+        &quot;commonQAView&quot;:对方空间共同回答QA问题展示对象
+    }
+</code></pre>
+
+<p><div class="section" id="getCommonQAList"></p>
+<h2>7.0.0.7 获取共同回答过的QA问答列表 /qa/getCommonQAList</h2>
+<p>HTTP请求方式:</p>
+<pre><code>POST
+</code></pre>
+
+<p>引用对象:</p>
+<p><a href="./Object.html#platformInfo">1.0 平台信息对象 platformInfo</a></p>
+<p><a href="./Object.html#commonQAView">2.5 对方空间共同回答QA问题展示对象 commonQAView</a></p>
+<p>传入参数:</p>
+<pre><code>    {
+        &quot;lookUserId&quot;:查看用户id,
+        &quot;width&quot;:头像宽度,
+        &quot;height&quot;:头像高度,
+        &quot;platformInfo&quot;:{平台信息对象}
+    }
+</code></pre>
+
+<p>返回:</p>
+<pre><code>    {
+        &quot;commonQAList&quot;:[
+            &quot;commonQAView&quot;:对方空间共同回答QA问题展示对象,
+            &quot;commonQAView&quot;:对方空间共同回答QA问题展示对象,
+            &quot;commonQAView&quot;:对方空间共同回答QA问题展示对象,
+            ...
+        ]
+
+
+    }
+</code></pre>
+
+<p><div class="section" id="getQAById"></p>
+<h2>7.0.0.8 通过QAId获取QA问答 /qa/getQAById</h2>
+<p>HTTP请求方式:</p>
+<pre><code>POST
+</code></pre>
+
+<p>引用对象:</p>
+<p><a href="./Object.html#platformInfo">1.0 平台信息对象 platformInfo</a></p>
+<p><a href="./Object.html#commonQAView">2.5 对方空间共同回答QA问题展示对象 commonQAView</a></p>
+<p><a href="./Object.html#qaView">2.6  QA问题展示对象 qaView</a></p>
+<p>传入参数:</p>
+<pre><code>    {
+        &quot;lookUserId&quot;:查看用户id,
+        &quot;questionId&quot;:问题id,
+        &quot;width&quot;:头像宽度,
+        &quot;height&quot;:头像高度,
+        &quot;platformInfo&quot;:{平台信息对象}
+    }
+</code></pre>
+
+<p>返回:</p>
+<pre><code>    {
+        &quot;type&quot;:1:没有回答；2：回答过,
+        &quot;qaView&quot;:{QA问题展示对象(当type=1时返回)},
+        &quot;commonQAView&quot;:{对方空间共同回答QA问题展示对象(当type=2时返回)}
+
+    }
+</code></pre>
+
+<hr />
+<p><div class="section" id="backPasswordValidate"></p>
+<h2>8.0.0.1 找回密码时获取验证码 /user/backPasswordValidate</h2>
+<p>HTTP请求方式:</p>
+<pre><code>POST
+</code></pre>
+
+<p>引用对象:</p>
+<p><a href="./Object.html#platformInfo">1.0 平台信息对象 platformInfo</a></p>
+<p>传入参数:</p>
+<pre><code>    {
+        &quot;mobileNo&quot;:手机号,
+        &quot;platformInfo&quot;:{平台信息对象}
+    }
+</code></pre>
+
+<p>返回:</p>
+<pre><code>    {
+        &quot;status&quot;:1:成功；-1：失败
+    }
+</code></pre>
+
+<p><div class="section" id="resetPassword"></p>
+<h2>8.0.0.2 重置密码接口/user/resetPassword</h2>
+<p>HTTP请求方式:</p>
+<pre><code>POST
+</code></pre>
+
+<p>引用对象:</p>
+<p><a href="./Object.html#platformInfo">1.0 平台信息对象 platformInfo</a></p>
+<p>传入参数:</p>
+<pre><code>    {
+        &quot;mobileNo&quot;:手机号,
+        &quot;password&quot;:密码,
+        &quot;validate&quot;:验证码,
+        &quot;platformInfo&quot;:{平台信息对象}
+    }
+</code></pre>
+
+<p>返回:</p>
+<pre><code>    {
+        &quot;status&quot;:1:成功
+    }
+</code></pre>
+
+<p><div class="section" id="updatePassword"></p>
+<h2>8.0.0.3 修改密码接口/space/updatePassword</h2>
+<p>HTTP请求方式:</p>
+<pre><code>POST
+</code></pre>
+
+<p>引用对象:</p>
+<p><a href="./Object.html#platformInfo">1.0 平台信息对象 platformInfo</a></p>
+<p>传入参数:</p>
+<pre><code>    {
+        &quot;oldPassword&quot;:旧密码,
+        &quot;newPassword&quot;:新密码,
+        &quot;platformInfo&quot;:{平台信息对象}
+    }
+</code></pre>
+
+<p>返回:</p>
+<pre><code>    {
+        &quot;status&quot;:1:成功，-1：失败
+    }
+</code></pre>
+
+<p><div class="section" id="reportContent"></p>
+<h2>8.0.0.4 修改密码接口/report/reportContent</h2>
+<p>HTTP请求方式:</p>
+<pre><code>POST
+</code></pre>
+
+<p>引用对象:</p>
+<p><a href="./Object.html#platformInfo">1.0 平台信息对象 platformInfo</a></p>
+<p>传入参数:</p>
+<pre><code>    {
+        &quot;contentId&quot;:内容id,
+        &quot;reportContent&quot;:举报内容,
+        &quot;contentType&quot;:内容类型 ：1 动态，2 话题,
+        &quot;reportType&quot;:举报类型,
+        &quot;reportUserId&quot;:被举报人id,
+        &quot;reportNickName&quot;:被举报人昵称,
+        &quot;platformInfo&quot;:{平台信息对象}
+    }
+</code></pre>
+
+<p>返回:</p>
+<pre><code>    {
+        &quot;status&quot;:1:成功，-1：失败
+    }
+</code></pre>
+
+<p><div class="section" id="reportUser"></p>
+<h2>8.0.0.5 举报用户接口/report/reportUser</h2>
+<p>HTTP请求方式:</p>
+<pre><code>POST
+</code></pre>
+
+<p>引用对象:</p>
+<p><a href="./Object.html#platformInfo">1.0 平台信息对象 platformInfo</a></p>
+<p>传入参数:</p>
+<pre><code>    {
+        &quot;reportType&quot;:举报类型,
+        &quot;reportUserId&quot;:被举报人id,
+        &quot;reportNickName&quot;:被举报人昵称,
+        &quot;platformInfo&quot;:{平台信息对象}
+    }
+</code></pre>
+
+<p>返回:</p>
+<pre><code>    {
+        &quot;status&quot;:1:成功，-1：失败
+    }
+</code></pre>
+
+<p><div class="section" id="sendGift"></p>
+<h2>8.0.0.6 发送礼物接口/msg/sendGift</h2>
+<p>HTTP请求方式:</p>
+<pre><code>POST
+</code></pre>
+
+<p>引用对象:</p>
+<p><a href="./Object.html#platformInfo">1.0 平台信息对象 platformInfo</a></p>
+<p>传入参数:</p>
+<pre><code>    {
+        &quot;giftId&quot;:礼物id,
+        &quot;receiveUserId&quot;:接受礼物用户id,
+        &quot;platformInfo&quot;:{平台信息对象}
+    }
+</code></pre>
+
+<p>返回:</p>
+<pre><code>    {
+        &quot;status&quot;:1:成功，-1：失败
+    }
+</code></pre>
+
+<p><div class="section" id="delBlackList"></p>
+<h2>8.0.0.7 移除黑名单 /space/delBlackList</h2>
+<p>HTTP请求方式:</p>
+<pre><code>POST
+</code></pre>
+
+<p>引用对象:</p>
+<p><a href="./Object.html#platformInfo">1.0 平台信息对象 platformInfo</a></p>
+<p>传入参数:</p>
+<pre><code>    {
+        &quot;blackUserId&quot;:取消拉黑用户id,
+        &quot;platformInfo&quot;:{平台信息对象}
+    }
+</code></pre>
+
+<p>返回:</p>
+<pre><code>    {
+        &quot;status&quot;:1:成功，-1：失败
+    }
+</code></pre>
+
+<p><div class="section" id="getGiftList"></p>
+<h2>8.0.0.8 获取礼物列表 /space/getGiftList</h2>
+<p>HTTP请求方式:</p>
+<pre><code>POST
+</code></pre>
+
+<p>引用对象:</p>
+<p><a href="./Object.html#platformInfo">1.0 平台信息对象 platformInfo</a></p>
+<p><a href="./Object.html#gift">3.6  修改标签对象 gift</a></p>
+<p>传入参数:</p>
+<pre><code>    {
+        &quot;platformInfo&quot;:{平台信息对象}
+    }
+</code></pre>
+
+<p>返回:</p>
+<pre><code>    {
+        &quot;giftList&quot;:[
+            &quot;gift&quot;:礼物对象,
+            &quot;gift&quot;:礼物对象,
+            &quot;gift&quot;:礼物对象,
+            ...
+        ]
+    }
+</code></pre>
+
+<p><div class="section" id="getMedalList"></p>
+<h2>8.0.0.9 获取用户勋章状态 /space/getMedalList</h2>
+<p>HTTP请求方式:</p>
+<pre><code>POST
+</code></pre>
+
+<p>引用对象:</p>
+<p><a href="./Object.html#platformInfo">1.0 平台信息对象 platformInfo</a></p>
+<p>传入参数:</p>
+<pre><code>    {
+        &quot;platformInfo&quot;:{平台信息对象},
+        &quot;seeUserId&quot;:要查看的用户ID（可选，缺失为看自己）
+    }
+</code></pre>
+
+<p>返回:</p>
+<pre><code>    {
+        &quot;qaCount&quot;:回答QA数量,
+        &quot;lookUserCount&quot;:看对方空间的次数,
+        &quot;scoreUserCount&quot;:打脸次数,
+        &quot;sendNotesCount&quot;:发动态次数,
+        &quot;sendTopicCount&quot;:发话题次数,
+        &quot;sendCommentCount&quot;:发评论次数,
+        &quot;likeUserCount&quot;:喜欢人次数,
+        &quot;isIdentityCard&quot;:是否实名认证,
+        &quot;infoLevel&quot;:资料完整进度,
+        &quot;msgToNum&quot;:妙笔生花
+    }
+</code></pre>
+
+<p><div class="section" id="getUserReceiveGiftList"></p>
+<h2>8.0.0.10 获取用户收礼物列表 /space/getUserReceiveGiftList</h2>
+<p>HTTP请求方式:</p>
+<pre><code>POST
+</code></pre>
+
+<p>引用对象:</p>
+<p><a href="./Object.html#platformInfo">1.0 平台信息对象 platformInfo</a></p>
+<p><a href="./Object.html#userReceiveGiftView">3.8  收礼物列表展示对象 userReceiveGiftView</a></p>
+<p>传入参数:</p>
+<pre><code>    {
+        &quot;width&quot;:显示用户头像宽度,
+        &quot;height&quot;:显示用户头像高度,
+        &quot;platformInfo&quot;:{平台信息对象}
+        &quot;seeUserId&quot;:要查看的用户ID（可选，缺失为看自己）
+    }
+</code></pre>
+
+<p>返回:</p>
+<pre><code>    {
+        &quot;userReceiveGiftViewList&quot;:[
+            &quot;userReceiveGiftView&quot;:收礼物列表展示对象,
+            &quot;userReceiveGiftView&quot;:收礼物列表展示对象,
+            &quot;userReceiveGiftView&quot;:收礼物列表展示对象,
+            ...
+        ]
+    }
+</code></pre>
+
+<p><div class="section" id="getUserSendGiftList"></p>
+<h2>8.0.0.11 查询用户发礼物列表 /space/getUserSendGiftList</h2>
+<p>HTTP请求方式:</p>
+<pre><code>POST
+</code></pre>
+
+<p>引用对象:</p>
+<p><a href="./Object.html#platformInfo">1.0 平台信息对象 platformInfo</a></p>
+<p><a href="./Object.html#userSendGiftView">3.7  用户发礼物展示对象 userSendGiftView</a></p>
+<p>传入参数:</p>
+<pre><code>    {
+        &quot;width&quot;:显示用户头像宽度,
+        &quot;height&quot;:显示用户头像高度,
+        &quot;platformInfo&quot;:{平台信息对象}
+    }
+</code></pre>
+
+<p>返回:</p>
+<pre><code>    {
+        &quot;userSendGiftViewList&quot;:[
+            &quot;userSendGiftView&quot;:收礼物列表展示对象,
+            &quot;userSendGiftView&quot;:收礼物列表展示对象,
+            &quot;userSendGiftView&quot;:收礼物列表展示对象,
+            ...
+        ]
+    }
+</code></pre>
+
+<p><div class="section" id="saveBlackList"></p>
+<h2>8.0.0.12 加入黑名单接口 /space/saveBlackList</h2>
+<p>HTTP请求方式:</p>
+<pre><code>POST
+</code></pre>
+
+<p>引用对象:</p>
+<p><a href="./Object.html#platformInfo">1.0 平台信息对象 platformInfo</a></p>
+<p>传入参数:</p>
+<pre><code>    {
+        &quot;blackUserId&quot;:拉黑用户id,
+        &quot;platformInfo&quot;:{平台信息对象}
+    }
+</code></pre>
+
+<p>返回:</p>
+<pre><code>    {
+        &quot;status&quot;:1:成功，-1：失败
+    }
+</code></pre>
+
+<p><div class="section" id="thirdPartyLogin"></p>
+<h2>8.0.0.13 第三方登录接口 /user/thirdPartyLogin</h2>
+<p>HTTP请求方式:</p>
+<pre><code>POST
+</code></pre>
+
+<p>引用对象:</p>
+<p><a href="./Object.html#platformInfo">1.0 平台信息对象 platformInfo</a></p>
+<p>传入参数:</p>
+<pre><code>    {
+        &quot;thirdPartyId&quot;:第三方登录id,
+        &quot;platformInfo&quot;:{平台信息对象}
+    }
+</code></pre>
+
+<p>返回:</p>
+<pre><code>    {
+        &quot;userId&quot;:用户id,
+        &quot;token&quot;:用户token，之后所有的请求接口都要传入token,
+        &quot;useStatus&quot;:用户状态（-2：封设备，-1：封账号 0：注册中，1：注册完成）,
+        &quot;regStep&quot;:用户注册步骤（&quot;validate(以获取获取验证码)&quot;,&quot;register(注完成)&quot;,&quot;addUserInfo（完成设置资料第一步）&quot;,&quot;perfectInfo（完成设置资料第二步）&quot;）
+    }
+</code></pre>
+
+<p><div class="section" id="getUserBlackList"></p>
+<h2>8.0.0.14 获取用户黑名单列表 /space/getUserBlackList</h2>
+<p>HTTP请求方式:</p>
+<pre><code>POST
+</code></pre>
+
+<p>引用对象:</p>
+<p><a href="./Object.html#platformInfo">1.0 平台信息对象 platformInfo</a></p>
+<p><a href="./Object.html#userBlackListView">3.9  用户给黑名单展示对象 userBlackListView</a></p>
+<p>传入参数:</p>
+<pre><code>    {
+        &quot;platformInfo&quot;:{平台信息对象}
+    }
+</code></pre>
+
+<p>返回:</p>
+<pre><code>    {
+        &quot;userBlackListView&quot;:[
+            &quot;userBlackListView&quot;:用户给黑名单展示对象,
+            &quot;userBlackListView&quot;:用户给黑名单展示对象,
+            &quot;userBlackListView&quot;:用户给黑名单展示对象,
+            ...
+        ]
+    }
+</code></pre>
+
+
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->

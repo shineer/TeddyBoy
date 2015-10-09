@@ -1,0 +1,54 @@
+//
+//  Prefix header
+//
+//  The contents of this file are implicitly included at the beginning of every source file.
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_3_0
+#warning "This project uses features only available in iOS SDK 3.0 and later."
+#endif
+
+#ifdef __OBJC__
+    #import <UIKit/UIKit.h>
+    #import <Foundation/Foundation.h>
+
+    // SDK include
+    #define NSLog(...)
+    #import <DDCore.h>
+
+    // App include
+    #import "AppDelegate.h"
+    #import "AppNavigator.h"
+    #import "AppConfig.h"
+    #import "AppDefine.h"
+    #import "AppUtility.h"
+
+    // AutoLayout
+    #import "Masonry.h"
+
+    // BlocksKit
+    #import <BlocksKit.h>
+    #import <BlocksKit+UIKit.h>
+    #import <BlocksKit+QuickLook.h>
+    #import <BlocksKit+MessageUI.h>
+
+    // SDWebImage
+    #import <SDWebImage/UIImageView+WebCache.h>
+
+    // Global include
+    #import "Util.h"
+    #import "DDThemeManager.h"
+    #import "DDHudView.h"
+    #import "DDImageView.h"
+    #import "DDButton.h"
+    #import "DDCoreDataMgr.h"
+    #import "ActionSheetDatePicker.h"
+
+    // Logic Manager
+    #import "DDContactManager.h"
+    #import "DDLoginManager.h"
+
+
+#endif
