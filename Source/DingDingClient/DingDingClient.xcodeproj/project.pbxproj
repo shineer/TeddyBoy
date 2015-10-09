@@ -29,12 +29,9 @@
 		D004280C1BA010A700F8A40B /* DDTenantHouseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D004280B1BA010A700F8A40B /* DDTenantHouseViewController.m */; };
 		D0049B101BA317A5006D8D0F /* libDingDingCore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D0049B0D1BA3137C006D8D0F /* libDingDingCore.a */; };
 		D00CBAAD1BB94B980010AC0C /* DDThemeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D00CBAAC1BB94B980010AC0C /* DDThemeManager.m */; settings = {ASSET_TAGS = (); }; };
-		D00CBAB61BC766100010AC0C /* IM.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D00CBAB51BC766100010AC0C /* IM.xcassets */; settings = {ASSET_TAGS = (); }; };
 		D00CBAB81BC7665C0010AC0C /* Common.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D00CBAB71BC7665C0010AC0C /* Common.xcassets */; settings = {ASSET_TAGS = (); }; };
 		D00CBABA1BC7673B0010AC0C /* User.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D00CBAB91BC7673A0010AC0C /* User.xcassets */; settings = {ASSET_TAGS = (); }; };
 		D00CBABC1BC767500010AC0C /* House.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D00CBABB1BC767500010AC0C /* House.xcassets */; settings = {ASSET_TAGS = (); }; };
-		D00CBABE1BC767670010AC0C /* Trade.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D00CBABD1BC767670010AC0C /* Trade.xcassets */; settings = {ASSET_TAGS = (); }; };
-		D00CBAC01BC7677C0010AC0C /* Payment.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D00CBABF1BC7677C0010AC0C /* Payment.xcassets */; settings = {ASSET_TAGS = (); }; };
 		D00CBAC21BC768A50010AC0C /* LaunchImage.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D00CBAC11BC768A50010AC0C /* LaunchImage.xcassets */; settings = {ASSET_TAGS = (); }; };
 		D00CBAC41BC768BE0010AC0C /* AppIcon.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D00CBAC31BC768BE0010AC0C /* AppIcon.xcassets */; settings = {ASSET_TAGS = (); }; };
 		D00CBACC1BC7775E0010AC0C /* blankpage_button_reload@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D00CBAC61BC7775E0010AC0C /* blankpage_button_reload@2x.png */; settings = {ASSET_TAGS = (); }; };
@@ -235,12 +232,9 @@
 		D0049B071BA3137C006D8D0F /* DingDingCore.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = DingDingCore.xcodeproj; path = ../../DingDingCore/DingDingCore.xcodeproj; sourceTree = "<group>"; };
 		D00CBAAB1BB94B980010AC0C /* DDThemeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDThemeManager.h; sourceTree = "<group>"; };
 		D00CBAAC1BB94B980010AC0C /* DDThemeManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDThemeManager.m; sourceTree = "<group>"; };
-		D00CBAB51BC766100010AC0C /* IM.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = IM.xcassets; sourceTree = "<group>"; };
 		D00CBAB71BC7665C0010AC0C /* Common.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Common.xcassets; sourceTree = "<group>"; };
 		D00CBAB91BC7673A0010AC0C /* User.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = User.xcassets; sourceTree = "<group>"; };
 		D00CBABB1BC767500010AC0C /* House.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = House.xcassets; sourceTree = "<group>"; };
-		D00CBABD1BC767670010AC0C /* Trade.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Trade.xcassets; sourceTree = "<group>"; };
-		D00CBABF1BC7677C0010AC0C /* Payment.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Payment.xcassets; sourceTree = "<group>"; };
 		D00CBAC11BC768A50010AC0C /* LaunchImage.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = LaunchImage.xcassets; sourceTree = "<group>"; };
 		D00CBAC31BC768BE0010AC0C /* AppIcon.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = AppIcon.xcassets; sourceTree = "<group>"; };
 		D00CBAC61BC7775E0010AC0C /* blankpage_button_reload@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blankpage_button_reload@2x.png"; sourceTree = "<group>"; };
@@ -864,12 +858,9 @@
 			isa = PBXGroup;
 			children = (
 				D00CBAC51BC7775E0010AC0C /* General */,
-				D00CBAB51BC766100010AC0C /* IM.xcassets */,
 				D00CBAB71BC7665C0010AC0C /* Common.xcassets */,
 				D00CBAB91BC7673A0010AC0C /* User.xcassets */,
 				D00CBABB1BC767500010AC0C /* House.xcassets */,
-				D00CBABD1BC767670010AC0C /* Trade.xcassets */,
-				D00CBABF1BC7677C0010AC0C /* Payment.xcassets */,
 				D00CBAC11BC768A50010AC0C /* LaunchImage.xcassets */,
 				D00CBAC31BC768BE0010AC0C /* AppIcon.xcassets */,
 				D00CBAF61BC799890010AC0C /* Introduction.xcassets */,
@@ -1344,7 +1335,6 @@
 				D00CBAD11BC7775E0010AC0C /* tab_bg_selected@2x.png in Resources */,
 				D00CBABC1BC767500010AC0C /* House.xcassets in Resources */,
 				D00CBAEE1BC7949A0010AC0C /* nav_btn_back@2x.png in Resources */,
-				D00CBABE1BC767670010AC0C /* Trade.xcassets in Resources */,
 				D00CBACD1BC7775E0010AC0C /* blankpage_image_Hi@2x.png in Resources */,
 				D00CBAEF1BC7949A0010AC0C /* nav_btn_delete@2x.png in Resources */,
 				D00CBAED1BC7949A0010AC0C /* nav_btn_add@2x.png in Resources */,
@@ -1353,7 +1343,6 @@
 				D00CBAF11BC7949A0010AC0C /* nav_btn_more@2x.png in Resources */,
 				D00CBACC1BC7775E0010AC0C /* blankpage_button_reload@2x.png in Resources */,
 				D00CBAC41BC768BE0010AC0C /* AppIcon.xcassets in Resources */,
-				D00CBAB61BC766100010AC0C /* IM.xcassets in Resources */,
 				D00CBACF1BC7775E0010AC0C /* blankpage_image_Sleep@2x.png in Resources */,
 				D00CBAE81BC7949A0010AC0C /* drop_down_list_arrow_normal@2x.png in Resources */,
 				D08741D719ECFBDD00E84E69 /* InfoPlist.strings in Resources */,
@@ -1362,7 +1351,6 @@
 				D00CBAE61BC7949A0010AC0C /* common_icon_unchecked@2x.png in Resources */,
 				D00CBAD01BC7775E0010AC0C /* tab_bg@2x.png in Resources */,
 				D08741CC19ECEE5800E84E69 /* ddlocalize.strings in Resources */,
-				D00CBAC01BC7677C0010AC0C /* Payment.xcassets in Resources */,
 				D00CBAF71BC799890010AC0C /* Introduction.xcassets in Resources */,
 				D00CBAE31BC794990010AC0C /* btn_enter_normal@2x.png in Resources */,
 				D00CBACE1BC7775E0010AC0C /* blankpage_image_loadFail@2x.png in Resources */,
